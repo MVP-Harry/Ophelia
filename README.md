@@ -1,6 +1,6 @@
-# Mazzy
+# Ophelia
 
-Mazzy is a chess engine that I will be developing.
+Ophelia is a chess engine that I will be developing.
 
 Features:
 - Reach grandmaster strength (2600 elo on lichess)
