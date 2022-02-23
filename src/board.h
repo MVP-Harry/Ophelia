@@ -173,7 +173,7 @@ class Board {
 		help_init();
 		whitePieces = whiteKing | whiteQueen | whiteBishops | whiteKnights | whiteRooks | whitePawns;
 		blackPieces = blackKing | blackQueen | blackBishops | blackKnights | blackRooks | blackPawns;
-	
+
 		// Init nextMove
 		if (fencolor[0] == 'w') nextMove = true;
 		else nextMove = false;
