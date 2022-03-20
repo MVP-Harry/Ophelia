@@ -29,7 +29,7 @@ const char* SQUARENAME[64] = {"a1","b1","c1","d1","e1","f1","g1","h1",
                               "a8","b8","c8","d8","e8","f8","g8","h8"};
 
 const char* PIECENAMES[16] = {"  ","P ","K ","N ","  ","B ","R ","Q ",
-                              "  ","P*","K*","N*","  ","B*","R*","Q*"};
+                              "  ","p ","k ","n ","  ","b ","r ","q "};
 
 const int NEWGAME[64] = {
 	   6 , 3 , 5 , 7 , 2 , 5 , 3 , 6 ,

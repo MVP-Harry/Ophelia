@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/board.dir/src/board.cpp.o  -o board  -lSDL2 

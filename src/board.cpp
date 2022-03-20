@@ -1,7 +1,8 @@
 #include "board.h"
+#include "global.h"
 #include <iostream>
 
-void Board::help_init() {
+void Board::helpInit() {
 	for (int i = 1; i <= 8; i++) {
 		for (int j = 1; j <= 8; j++) {
 			int id = (8 - i) * 8 + j - 1;
@@ -17,9 +18,7 @@ void Board::help_init() {
 					break;
 				case WHITE_BISHOP:
 					whiteBishops |= (1 << id);
-					break;
-				case WHITE_KNIGHT:
-					whiteKnights |= (1 << id);
+					break; case WHITE_KNIGHT: whiteKnights |= (1 << id);
 					break;
 				case WHITE_PAWN:
 					whitePawns |= (1 << id);
@@ -57,8 +56,9 @@ Board::Board() {
 		int row = 8 - i / 8;
 		square[row][col] = NEWGAME[i];
 	}
-	help_init();
+	helpInit();
 	nextMove = true;
+	viewRotated = false;
 	castleBlack = castleWhite = 3;
 	fiftyMove = 0;
 	epSquare = 0; // ????
@@ -74,24 +74,24 @@ Board::Board(int input[64], bool next, int fiftyM, int castleW, int castleB, int
 		int col = i % 8 + 1;
 		int row = 8 - i / 8;
 		square[row][col] = input[i];
-		help_init();
-		nextMove = next;
-		fiftyMove = fiftyM;
-		castleWhite = castleW;
-		castleBlack = castleB;
-		epSquare = epSq;
-		whitePieces = whiteKing | whiteQueen | whiteBishops | whiteKnights | whiteRooks | whitePawns;
-		blackPieces = blackKing | blackQueen | blackBishops | blackKnights | blackRooks | blackPawns;
-
 	}
+	helpInit();
+	nextMove = next;
+	viewRotated = false;
+	fiftyMove = fiftyM;
+	castleWhite = castleW;
+	castleBlack = castleB;
+	epSquare = epSq;
+	whitePieces = whiteKing | whiteQueen | whiteBishops | whiteKnights | whiteRooks | whitePawns;
+	blackPieces = blackKing | blackQueen | blackBishops | blackKnights | blackRooks | blackPawns;
 }
 
-Board::Board(char fen[], char fencolor[], char fencastling[], char fenenpessant[], char fenhalfmoveclock[], char fenfullmove[]) {
-	// Init square and use help_init to init bitset
+Board::Board(std::string fen, std::string fencolor, std::string fencastling, std::string fenenpessant, std::string fenhalfmoveclock, std::string fenfullmove) {
+	// Init square and use helpInit to init bitset
 	for (int i = 0; i < 9; i++)
 		for (int j = 0; j < 9; j++)
 			square[i][j] = 0;
-	int len = strlen(fen);
+	int len = fen.length();
 	int row = 1, col = 1;
 	for (int i = 0; i < len; i++) {
 		if (fen[i] == '/') {
@@ -142,9 +142,11 @@ Board::Board(char fen[], char fencolor[], char fencastling[], char fenenpessant[
 		}
 	}
 
-	help_init();
+	helpInit();
 	whitePieces = whiteKing | whiteQueen | whiteBishops | whiteKnights | whiteRooks | whitePawns;
 	blackPieces = blackKing | blackQueen | blackBishops | blackKnights | blackRooks | blackPawns;
+
+	viewRotated = false;
 
 	// Init nextMove
 	if (fencolor[0] == 'w') nextMove = true;
@@ -156,15 +158,24 @@ Board::Board(char fen[], char fencolor[], char fencastling[], char fenenpessant[
 	if (fencastling[2] == 'k') castleBlack |= 2;
 	if (fencastling[3] == 'q') castleBlack |= 1;
 
-	if (strlen(fenenpessant) == '1') epSquare = 0;
+	if (fenenpessant.length() == '1') epSquare = 0;
 	else {
 		epSquare = (fenenpessant[0] - 'a') * 8 + (fenenpessant[1] - '1');
 	}
 
-	fiftyMove = atoi(fenhalfmoveclock);
+	fiftyMove = std::stoi(fenhalfmoveclock);
 }
 
 void Board::display() {
+	if (viewRotated) {
+		for (int i = 8; i >= 1; i--) {
+			for (int j = 1; j <= 8; j++) {
+				std::cout << PIECENAMES[square[i][j]];
+			}
+			std::cout << std::endl;
+		}
+		return;
+	}
 	for (int i = 1; i <= 8; i++) {
 		for (int j = 1; j <= 8; j++) {
 			std::cout << PIECENAMES[square[i][j]];
@@ -173,7 +184,19 @@ void Board::display() {
 	}
 }
 
+bool Board::getRotation() {
+	return viewRotated;
+}
+
+bool Board::getTurn() {
+	return nextMove;
+}
+
 int main() {
-	
+	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
+	std::cin >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
+	Board new_board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
+	new_board.display();
 	return 0;
 }
+

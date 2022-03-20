@@ -19,6 +19,7 @@ class Board {
 	std::bitset<64> whitePieces, blackPieces, occupiedSquares;
 
 	bool nextMove; // if nextMove is true, then it's white's turn
+	bool viewRotated;
 	int castleWhite; // if white can still castle; left bit represents king side, right bit represents queen side
 	int castleBlack; // if black can still castle
 
@@ -27,16 +28,22 @@ class Board {
 	int fiftyMove; // move since the last pawn move or capture
 	int material; // total material in centipawn, in white's perspective
 
-	void help_init();
+	void helpInit();
 
 	public:
 	Board();
 
 	Board(int input[64], bool next, int fiftyM, int castleW, int castleB, int epSq);
 
-	Board(char fen[], char fencolor[], char fencastling[], char fenenpessant[], char fenhalfmoveclock[], char fenfullmove[]);
+	Board(std::string fen, std::string fencolor, std::string fencastling, std::string fenenpessant, std::string fenhalfmoveclock, std::string fenfullmove);
 
 	void display();
+
+	void draw();
+
+	bool getRotation();
+
+	bool getTurn();
 };
 
 #endif

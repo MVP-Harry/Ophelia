@@ -1,0 +1,3 @@
+/home/harry/CS/Ophelia/CMakeFiles/rebuild_cache.dir
+/home/harry/CS/Ophelia/CMakeFiles/edit_cache.dir
+/home/harry/CS/Ophelia/CMakeFiles/board.dir

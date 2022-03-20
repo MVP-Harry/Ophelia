@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/harry/CS/Ophelia",
+  "command": "/usr/bin/c++   -I/usr/include/SDL2 -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/board.dir/src/board.cpp.o -c /home/harry/CS/Ophelia/src/board.cpp",
+  "file": "/home/harry/CS/Ophelia/src/board.cpp"
+}
+]
