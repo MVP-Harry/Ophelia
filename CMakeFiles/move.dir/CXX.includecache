@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/harry/CS/Ophelia/src/move.cpp
+global.h
+/home/harry/CS/Ophelia/src/global.h
+iostream
+-
+board.h
+-
+move.h
+-
+
+include/board.h
+bitset
+-
+cctype
+-
+cstddef
+-
+iostream
+-
+new
+-
+stdio.h
+-
+string.h
+-
+global.h
+include/global.h
+
+include/global.h
+
+include/move.h
+board.h
+-
+

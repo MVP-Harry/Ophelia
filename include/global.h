@@ -19,6 +19,10 @@ extern const int E2 = 12; extern const int F2 = 13; extern const int G2 = 14; ex
 extern const int A1 =  0; extern const int B1 =  1; extern const int C1 =  2; extern const int D1 =  3;
 extern const int E1 =  4; extern const int F1 =  5; extern const int G1 =  6; extern const int H1 =  7;
 
+#define ull unsigned long long
+
+const int KNIGHT_MOVE[8] = {-17, -15, -10, -6, 6, 10, 15, 17};
+
 const char* SQUARENAME[64] = {"a1","b1","c1","d1","e1","f1","g1","h1",
                               "a2","b2","c2","d2","e2","f2","g2","h2",
                               "a3","b3","c3","d3","e3","f3","g3","h3",

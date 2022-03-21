@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/board.dir/src/board.cpp.o  -o board  -lSDL2 
+/usr/bin/c++     CMakeFiles/board.dir/src/board.cpp.o  -o board 

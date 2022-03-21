@@ -192,6 +192,16 @@ bool Board::getTurn() {
 	return nextMove;
 }
 
+ull Board::getWhiteKnights() {
+	return whiteKnights;
+}
+
+int Board::getPiece(int num) {
+	int r = num / 8;
+	int c = num % 8;
+	return square[8 - r][c];
+}
+
 int main() {
 	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
 	std::cin >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;

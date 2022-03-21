@@ -111,6 +111,45 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named data
+
+# Build rule for target.
+data: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 data
+.PHONY : data
+
+# fast build rule for target.
+data/fast:
+	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/build
+.PHONY : data/fast
+
+#=============================================================================
+# Target rules for targets named move
+
+# Build rule for target.
+move: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move
+.PHONY : move
+
+# fast build rule for target.
+move/fast:
+	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/build
+.PHONY : move/fast
+
+#=============================================================================
+# Target rules for targets named generator
+
+# Build rule for target.
+generator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 generator
+.PHONY : generator
+
+# fast build rule for target.
+generator/fast:
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
+.PHONY : generator/fast
+
+#=============================================================================
 # Target rules for targets named board
 
 # Build rule for target.
@@ -150,6 +189,87 @@ src/board.cpp.s:
 	$(MAKE) -f CMakeFiles/board.dir/build.make CMakeFiles/board.dir/src/board.cpp.s
 .PHONY : src/board.cpp.s
 
+src/data.o: src/data.cpp.o
+
+.PHONY : src/data.o
+
+# target to build an object file
+src/data.cpp.o:
+	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/src/data.cpp.o
+.PHONY : src/data.cpp.o
+
+src/data.i: src/data.cpp.i
+
+.PHONY : src/data.i
+
+# target to preprocess a source file
+src/data.cpp.i:
+	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/src/data.cpp.i
+.PHONY : src/data.cpp.i
+
+src/data.s: src/data.cpp.s
+
+.PHONY : src/data.s
+
+# target to generate assembly for a file
+src/data.cpp.s:
+	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/src/data.cpp.s
+.PHONY : src/data.cpp.s
+
+src/generator.o: src/generator.cpp.o
+
+.PHONY : src/generator.o
+
+# target to build an object file
+src/generator.cpp.o:
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/generator.cpp.o
+.PHONY : src/generator.cpp.o
+
+src/generator.i: src/generator.cpp.i
+
+.PHONY : src/generator.i
+
+# target to preprocess a source file
+src/generator.cpp.i:
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/generator.cpp.i
+.PHONY : src/generator.cpp.i
+
+src/generator.s: src/generator.cpp.s
+
+.PHONY : src/generator.s
+
+# target to generate assembly for a file
+src/generator.cpp.s:
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/generator.cpp.s
+.PHONY : src/generator.cpp.s
+
+src/move.o: src/move.cpp.o
+
+.PHONY : src/move.o
+
+# target to build an object file
+src/move.cpp.o:
+	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/move.cpp.o
+.PHONY : src/move.cpp.o
+
+src/move.i: src/move.cpp.i
+
+.PHONY : src/move.i
+
+# target to preprocess a source file
+src/move.cpp.i:
+	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/move.cpp.i
+.PHONY : src/move.cpp.i
+
+src/move.s: src/move.cpp.s
+
+.PHONY : src/move.s
+
+# target to generate assembly for a file
+src/move.cpp.s:
+	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/move.cpp.s
+.PHONY : src/move.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,10 +278,22 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... data"
+	@echo "... move"
+	@echo "... generator"
 	@echo "... board"
 	@echo "... src/board.o"
 	@echo "... src/board.i"
 	@echo "... src/board.s"
+	@echo "... src/data.o"
+	@echo "... src/data.i"
+	@echo "... src/data.s"
+	@echo "... src/generator.o"
+	@echo "... src/generator.i"
+	@echo "... src/generator.s"
+	@echo "... src/move.o"
+	@echo "... src/move.i"
+	@echo "... src/move.s"
 .PHONY : help
 
 

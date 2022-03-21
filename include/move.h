@@ -61,6 +61,8 @@ class Move {
 	bool isCastleOO();
 
 	bool isCastleOOO();
+
+	void display();
 };
 
 #endif
