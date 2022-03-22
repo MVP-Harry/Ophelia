@@ -6,28 +6,12 @@
 
 #IncludeRegexTransform: 
 
-/home/harry/CS/Ophelia/src/board.cpp
-board.h
-/home/harry/CS/Ophelia/src/board.h
-iostream
--
-
-/home/harry/CS/Ophelia/src/data.cpp
-data.h
--
-iostream
--
-
 /home/harry/CS/Ophelia/src/generator.cpp
+fstream
+-
 iostream
 -
 generator.h
--
-
-/home/harry/CS/Ophelia/src/move.cpp
-iostream
--
-move.h
 -
 
 include/board.h
@@ -51,6 +35,8 @@ move.h
 -
 
 include/global.h
+string
+-
 
 include/move.h
 board.h

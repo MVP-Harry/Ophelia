@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 #include <generator.h>
 
@@ -7,6 +8,7 @@ Generator::Generator(Board b) {
 
 void Generator::generateWhiteKnightMoves() {
 	ull whiteKnights = board.getWhiteKnights();
+	std::cout << whiteKnights << std::endl;
 	while (whiteKnights) {
 		int x = lowbit(whiteKnights);
 		whiteKnights ^= ((ull) 1 << x);
@@ -26,10 +28,17 @@ void Generator::generateWhiteKnightMoves() {
 void Generator::displayWhiteKnightMoves() {
 	for (auto m : whiteKnighMoves) {
 		m.display();
+		std::cout << std::endl;
 	}
 }
 
 int main() {
-	std::cout << "wtf bro" << std::endl;
+	std::ifstream input("input.txt");
+	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
+	input >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
+	Board board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
+	Generator gen(board);
+	gen.generateWhiteKnightMoves();
+	gen.displayWhiteKnightMoves();
 	return 0;
 }
