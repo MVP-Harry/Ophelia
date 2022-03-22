@@ -1,8 +1,5 @@
 #include <iostream>
 #include <generator.h>
-#include <board.h>
-#include <global.h>
-#include <data.h>
 
 Generator::Generator(Board b) {
 	board = b;
@@ -33,6 +30,6 @@ void Generator::displayWhiteKnightMoves() {
 }
 
 int main() {
-	// std::cout << "wtf bro" << std::endl;
+	std::cout << "wtf bro" << std::endl;
 	return 0;
 }

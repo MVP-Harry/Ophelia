@@ -1,12 +1,9 @@
 #ifndef GENERATOR_H
 #define GENERATOR_H
 
-#include <global.h>
-#include <board.h>
+#include <vector>
 #include <data.h>
 #include <move.h>
-#include <stdexcept>
-#include <vector>
 
 class Generator {
 	Board board;

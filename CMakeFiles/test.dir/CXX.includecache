@@ -9,15 +9,11 @@
 /home/harry/CS/Ophelia/src/board.cpp
 board.h
 /home/harry/CS/Ophelia/src/board.h
-global.h
-/home/harry/CS/Ophelia/src/global.h
 iostream
 -
 
 /home/harry/CS/Ophelia/src/data.cpp
 data.h
--
-global.h
 -
 iostream
 -
@@ -27,55 +23,31 @@ iostream
 -
 generator.h
 -
-board.h
--
-global.h
--
-data.h
--
 
 /home/harry/CS/Ophelia/src/move.cpp
-global.h
--
 iostream
--
-board.h
 -
 move.h
 -
 
 include/board.h
-cctype
--
-cstddef
--
 iostream
--
-new
--
-stdio.h
--
-string.h
 -
 global.h
 include/global.h
+string
+-
 
 include/data.h
 global.h
 -
 
 include/generator.h
-global.h
--
-board.h
+vector
 -
 data.h
 -
 move.h
--
-stdexcept
--
-vector
 -
 
 include/global.h

@@ -1,13 +1,9 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <cctype>
-#include <cstddef>
 #include <iostream>
-#include <new>
-#include <stdio.h>
-#include <string.h>
 #include "global.h"
+#include <string>
 
 class Board {
 	// Using bitboard representation

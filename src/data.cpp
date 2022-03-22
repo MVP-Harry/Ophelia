@@ -1,5 +1,4 @@
 #include <data.h>
-#include <global.h>
 #include <iostream>
 
 Data::Data() {
@@ -19,6 +18,6 @@ void Data::genKnight() {
 	}
 }
 
-int main() {
-	return 0;
-}
+// int main() {
+// 	return 0;
+// }

@@ -1,5 +1,4 @@
 #include "board.h"
-#include "global.h"
 #include <iostream>
 
 void Board::helpInit() {
@@ -202,12 +201,12 @@ int Board::getPiece(int num) {
 	return square[8 - r][c];
 }
 
-int main() {
-	freopen("../Inputs/fen1.txt", "r", stdin);
-	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
-	std::cin >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
-	Board new_board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
-	new_board.display();
-	return 0;
-}
-
+// int main() {
+// 	freopen("../Inputs/fen1.txt", "r", stdin);
+// 	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
+// 	std::cin >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
+// 	Board new_board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
+// 	new_board.display();
+// 	return 0;
+// }
+//
