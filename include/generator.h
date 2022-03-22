@@ -1,7 +1,7 @@
 #ifndef GENERATOR_H
 #define GENERATOR_H
 
-#include "global.h"
+#include <global.h>
 #include <board.h>
 #include <data.h>
 #include <move.h>

@@ -8,7 +8,7 @@
 
 /home/harry/CS/Ophelia/src/move.cpp
 global.h
-/home/harry/CS/Ophelia/src/global.h
+-
 iostream
 -
 board.h
@@ -17,8 +17,6 @@ move.h
 -
 
 include/board.h
-bitset
--
 cctype
 -
 cstddef

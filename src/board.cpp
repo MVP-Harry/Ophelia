@@ -203,6 +203,7 @@ int Board::getPiece(int num) {
 }
 
 int main() {
+	freopen("../Inputs/fen1.txt", "r", stdin);
 	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
 	std::cin >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
 	Board new_board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);

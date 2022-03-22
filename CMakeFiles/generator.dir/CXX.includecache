@@ -19,8 +19,6 @@ data.h
 -
 
 include/board.h
-bitset
--
 cctype
 -
 cstddef
@@ -42,7 +40,7 @@ global.h
 
 include/generator.h
 global.h
-include/global.h
+-
 board.h
 -
 data.h

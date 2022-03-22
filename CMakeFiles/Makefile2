@@ -53,10 +53,7 @@ CMAKE_BINARY_DIR = /home/harry/CS/Ophelia
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/data.dir/all
-all: CMakeFiles/move.dir/all
-all: CMakeFiles/generator.dir/all
-all: CMakeFiles/board.dir/all
+all: CMakeFiles/test.dir/all
 
 .PHONY : all
 
@@ -66,120 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/data.dir/clean
-clean: CMakeFiles/move.dir/clean
-clean: CMakeFiles/generator.dir/clean
-clean: CMakeFiles/board.dir/clean
+clean: CMakeFiles/test.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/data.dir
+# Target rules for target CMakeFiles/test.dir
 
 # All Build rule for target.
-CMakeFiles/data.dir/all:
-	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/depend
-	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/harry/CS/Ophelia/CMakeFiles --progress-num=3,4 "Built target data"
-.PHONY : CMakeFiles/data.dir/all
+CMakeFiles/test.dir/all:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/harry/CS/Ophelia/CMakeFiles --progress-num=1,2,3,4,5 "Built target test"
+.PHONY : CMakeFiles/test.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/data.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/CS/Ophelia/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/data.dir/all
+CMakeFiles/test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/CS/Ophelia/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/CS/Ophelia/CMakeFiles 0
-.PHONY : CMakeFiles/data.dir/rule
+.PHONY : CMakeFiles/test.dir/rule
 
 # Convenience name for target.
-data: CMakeFiles/data.dir/rule
+test: CMakeFiles/test.dir/rule
 
-.PHONY : data
-
-# clean rule for target.
-CMakeFiles/data.dir/clean:
-	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/clean
-.PHONY : CMakeFiles/data.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/move.dir
-
-# All Build rule for target.
-CMakeFiles/move.dir/all:
-	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/depend
-	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/harry/CS/Ophelia/CMakeFiles --progress-num=7,8 "Built target move"
-.PHONY : CMakeFiles/move.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/move.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/CS/Ophelia/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/move.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/CS/Ophelia/CMakeFiles 0
-.PHONY : CMakeFiles/move.dir/rule
-
-# Convenience name for target.
-move: CMakeFiles/move.dir/rule
-
-.PHONY : move
+.PHONY : test
 
 # clean rule for target.
-CMakeFiles/move.dir/clean:
-	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/clean
-.PHONY : CMakeFiles/move.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/generator.dir
-
-# All Build rule for target.
-CMakeFiles/generator.dir/all:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/depend
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/harry/CS/Ophelia/CMakeFiles --progress-num=5,6 "Built target generator"
-.PHONY : CMakeFiles/generator.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/generator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/CS/Ophelia/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/generator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/CS/Ophelia/CMakeFiles 0
-.PHONY : CMakeFiles/generator.dir/rule
-
-# Convenience name for target.
-generator: CMakeFiles/generator.dir/rule
-
-.PHONY : generator
-
-# clean rule for target.
-CMakeFiles/generator.dir/clean:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/clean
-.PHONY : CMakeFiles/generator.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/board.dir
-
-# All Build rule for target.
-CMakeFiles/board.dir/all:
-	$(MAKE) -f CMakeFiles/board.dir/build.make CMakeFiles/board.dir/depend
-	$(MAKE) -f CMakeFiles/board.dir/build.make CMakeFiles/board.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/harry/CS/Ophelia/CMakeFiles --progress-num=1,2 "Built target board"
-.PHONY : CMakeFiles/board.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/board.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/CS/Ophelia/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/board.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/CS/Ophelia/CMakeFiles 0
-.PHONY : CMakeFiles/board.dir/rule
-
-# Convenience name for target.
-board: CMakeFiles/board.dir/rule
-
-.PHONY : board
-
-# clean rule for target.
-CMakeFiles/board.dir/clean:
-	$(MAKE) -f CMakeFiles/board.dir/build.make CMakeFiles/board.dir/clean
-.PHONY : CMakeFiles/board.dir/clean
+CMakeFiles/test.dir/clean:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
+.PHONY : CMakeFiles/test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,8 +1,6 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-
-#include <bitset>
 #include <cctype>
 #include <cstddef>
 #include <iostream>

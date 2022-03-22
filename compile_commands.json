@@ -1,22 +1,22 @@
 [
 {
   "directory": "/home/harry/CS/Ophelia",
-  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/data.dir/src/data.cpp.o -c /home/harry/CS/Ophelia/src/data.cpp",
-  "file": "/home/harry/CS/Ophelia/src/data.cpp"
+  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/board.cpp.o -c /home/harry/CS/Ophelia/src/board.cpp",
+  "file": "/home/harry/CS/Ophelia/src/board.cpp"
 },
 {
   "directory": "/home/harry/CS/Ophelia",
-  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/move.dir/src/move.cpp.o -c /home/harry/CS/Ophelia/src/move.cpp",
+  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/move.cpp.o -c /home/harry/CS/Ophelia/src/move.cpp",
   "file": "/home/harry/CS/Ophelia/src/move.cpp"
 },
 {
   "directory": "/home/harry/CS/Ophelia",
-  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/generator.dir/src/generator.cpp.o -c /home/harry/CS/Ophelia/src/generator.cpp",
-  "file": "/home/harry/CS/Ophelia/src/generator.cpp"
+  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/data.cpp.o -c /home/harry/CS/Ophelia/src/data.cpp",
+  "file": "/home/harry/CS/Ophelia/src/data.cpp"
 },
 {
   "directory": "/home/harry/CS/Ophelia",
-  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/board.dir/src/board.cpp.o -c /home/harry/CS/Ophelia/src/board.cpp",
-  "file": "/home/harry/CS/Ophelia/src/board.cpp"
+  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/generator.cpp.o -c /home/harry/CS/Ophelia/src/generator.cpp",
+  "file": "/home/harry/CS/Ophelia/src/generator.cpp"
 }
 ]

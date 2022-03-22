@@ -4,17 +4,18 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(Ophelia VERSION 1.0)
 
-add_executable(board src/board.cpp)
-target_include_directories(board PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+set(SOURCE_FILES src/board.cpp src/move.cpp src/data.cpp src/generator.cpp)
+add_executable(test ${SOURCE_FILES})
+target_include_directories(test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-add_executable(move src/move.cpp)
-target_include_directories(move PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-
-add_executable(data src/data.cpp)
-target_include_directories(data PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-
-add_executable(generator src/generator.cpp)
-target_include_directories(generator PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+# add_executable(move src/move.cpp)
+# target_include_directories(move PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+#
+# add_executable(data src/data.cpp)
+# target_include_directories(data PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+#
+# add_executable(generator src/generator.cpp)
+# target_include_directories(generator PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # file(GLOB APP_SOURCES src/*.cpp)
 # foreach(testsourcefile ${APP_SOURCES})

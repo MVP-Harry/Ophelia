@@ -1,4 +1,4 @@
-#include "global.h"
+#include <global.h>
 #include <iostream>
 #include <board.h>
 #include <move.h>
@@ -148,6 +148,7 @@ int main() {
 	move.setTo(G1);
 	move.setPiece(WHITE_KING);
 	move.setProm(WHITE_KING);
-
+	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
+	std::cin >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
 	return 0;
 }

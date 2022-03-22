@@ -111,56 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named data
+# Target rules for targets named test
 
 # Build rule for target.
-data: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 data
-.PHONY : data
+test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test
+.PHONY : test
 
 # fast build rule for target.
-data/fast:
-	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/build
-.PHONY : data/fast
-
-#=============================================================================
-# Target rules for targets named move
-
-# Build rule for target.
-move: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 move
-.PHONY : move
-
-# fast build rule for target.
-move/fast:
-	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/build
-.PHONY : move/fast
-
-#=============================================================================
-# Target rules for targets named generator
-
-# Build rule for target.
-generator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 generator
-.PHONY : generator
-
-# fast build rule for target.
-generator/fast:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
-.PHONY : generator/fast
-
-#=============================================================================
-# Target rules for targets named board
-
-# Build rule for target.
-board: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 board
-.PHONY : board
-
-# fast build rule for target.
-board/fast:
-	$(MAKE) -f CMakeFiles/board.dir/build.make CMakeFiles/board.dir/build
-.PHONY : board/fast
+test/fast:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 src/board.o: src/board.cpp.o
 
@@ -168,7 +129,7 @@ src/board.o: src/board.cpp.o
 
 # target to build an object file
 src/board.cpp.o:
-	$(MAKE) -f CMakeFiles/board.dir/build.make CMakeFiles/board.dir/src/board.cpp.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/board.cpp.o
 .PHONY : src/board.cpp.o
 
 src/board.i: src/board.cpp.i
@@ -177,7 +138,7 @@ src/board.i: src/board.cpp.i
 
 # target to preprocess a source file
 src/board.cpp.i:
-	$(MAKE) -f CMakeFiles/board.dir/build.make CMakeFiles/board.dir/src/board.cpp.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/board.cpp.i
 .PHONY : src/board.cpp.i
 
 src/board.s: src/board.cpp.s
@@ -186,7 +147,7 @@ src/board.s: src/board.cpp.s
 
 # target to generate assembly for a file
 src/board.cpp.s:
-	$(MAKE) -f CMakeFiles/board.dir/build.make CMakeFiles/board.dir/src/board.cpp.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/board.cpp.s
 .PHONY : src/board.cpp.s
 
 src/data.o: src/data.cpp.o
@@ -195,7 +156,7 @@ src/data.o: src/data.cpp.o
 
 # target to build an object file
 src/data.cpp.o:
-	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/src/data.cpp.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/data.cpp.o
 .PHONY : src/data.cpp.o
 
 src/data.i: src/data.cpp.i
@@ -204,7 +165,7 @@ src/data.i: src/data.cpp.i
 
 # target to preprocess a source file
 src/data.cpp.i:
-	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/src/data.cpp.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/data.cpp.i
 .PHONY : src/data.cpp.i
 
 src/data.s: src/data.cpp.s
@@ -213,7 +174,7 @@ src/data.s: src/data.cpp.s
 
 # target to generate assembly for a file
 src/data.cpp.s:
-	$(MAKE) -f CMakeFiles/data.dir/build.make CMakeFiles/data.dir/src/data.cpp.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/data.cpp.s
 .PHONY : src/data.cpp.s
 
 src/generator.o: src/generator.cpp.o
@@ -222,7 +183,7 @@ src/generator.o: src/generator.cpp.o
 
 # target to build an object file
 src/generator.cpp.o:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/generator.cpp.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator.cpp.o
 .PHONY : src/generator.cpp.o
 
 src/generator.i: src/generator.cpp.i
@@ -231,7 +192,7 @@ src/generator.i: src/generator.cpp.i
 
 # target to preprocess a source file
 src/generator.cpp.i:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/generator.cpp.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator.cpp.i
 .PHONY : src/generator.cpp.i
 
 src/generator.s: src/generator.cpp.s
@@ -240,7 +201,7 @@ src/generator.s: src/generator.cpp.s
 
 # target to generate assembly for a file
 src/generator.cpp.s:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/generator.cpp.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator.cpp.s
 .PHONY : src/generator.cpp.s
 
 src/move.o: src/move.cpp.o
@@ -249,7 +210,7 @@ src/move.o: src/move.cpp.o
 
 # target to build an object file
 src/move.cpp.o:
-	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/move.cpp.o
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/move.cpp.o
 .PHONY : src/move.cpp.o
 
 src/move.i: src/move.cpp.i
@@ -258,7 +219,7 @@ src/move.i: src/move.cpp.i
 
 # target to preprocess a source file
 src/move.cpp.i:
-	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/move.cpp.i
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/move.cpp.i
 .PHONY : src/move.cpp.i
 
 src/move.s: src/move.cpp.s
@@ -267,7 +228,7 @@ src/move.s: src/move.cpp.s
 
 # target to generate assembly for a file
 src/move.cpp.s:
-	$(MAKE) -f CMakeFiles/move.dir/build.make CMakeFiles/move.dir/src/move.cpp.s
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/move.cpp.s
 .PHONY : src/move.cpp.s
 
 # Help Target
@@ -278,10 +239,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... data"
-	@echo "... move"
-	@echo "... generator"
-	@echo "... board"
+	@echo "... test"
 	@echo "... src/board.o"
 	@echo "... src/board.i"
 	@echo "... src/board.s"

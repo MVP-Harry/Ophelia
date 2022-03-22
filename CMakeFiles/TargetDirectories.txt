@@ -1,6 +1,3 @@
 /home/harry/CS/Ophelia/CMakeFiles/rebuild_cache.dir
 /home/harry/CS/Ophelia/CMakeFiles/edit_cache.dir
-/home/harry/CS/Ophelia/CMakeFiles/data.dir
-/home/harry/CS/Ophelia/CMakeFiles/move.dir
-/home/harry/CS/Ophelia/CMakeFiles/generator.dir
-/home/harry/CS/Ophelia/CMakeFiles/board.dir
+/home/harry/CS/Ophelia/CMakeFiles/test.dir
