@@ -2,43 +2,45 @@
 #include <iostream>
 
 void Board::helpInit() {
-	for (int i = 1; i <= 8; i++) {
-		for (int j = 1; j <= 8; j++) {
-			int id = (8 - i) * 8 + j - 1;
+	for (int i = 0; i <= 7; i++) {
+		for (int j = 0; j <= 7; j++) {
+			int id = (7 - i) * 8 + j;
 			switch (square[i][j]) {
 				case WHITE_KING:
-					whiteKing |= (1 << id);
+					whiteKing |= ((ull) 1 << id);
 					break;
 				case WHITE_QUEEN:
-					whiteQueen |= (1 << id);
+					whiteQueen |= ((ull) 1 << id);
 					break;
 				case WHITE_ROOK:
-					whiteRooks |= (1 << id);
+					whiteRooks |= ((ull) 1 << id);
 					break;
 				case WHITE_BISHOP:
-					whiteBishops |= (1 << id);
-					break; case WHITE_KNIGHT: whiteKnights |= (1 << id);
+					whiteBishops |= ((ull) 1 << id);
+					break; 
+				case WHITE_KNIGHT: 
+					whiteKnights |= ((ull) 1 << id);
 					break;
 				case WHITE_PAWN:
-					whitePawns |= (1 << id);
+					whitePawns |= ((ull) 1 << id);
 					break;
 				case BLACK_KING:
-					blackKing |= (1 << id);
+					blackKing |= ((ull) 1 << id);
 					break;
 				case BLACK_QUEEN:
-					blackQueen |= (1 << id);
+					blackQueen |= ((ull) 1 << id);
 					break;
 				case BLACK_ROOK:
-					blackRooks |= (1 << id);
+					blackRooks |= ((ull) 1 << id);
 					break;
 				case BLACK_BISHOP:
-					blackBishops |= (1 << id);
+					blackBishops |= ((ull) 1 << id);
 					break;
 				case BLACK_KNIGHT:
-					blackKnights |= (1 << id);
+					blackKnights |= ((ull) 1 << id);
 					break;
 				case BLACK_PAWN:
-					blackPawns |= (1 << id);
+					blackPawns |= ((ull) 1 << id);
 					break;
 			}
 		}
@@ -47,12 +49,12 @@ void Board::helpInit() {
 
 Board::Board() {
 	// init new game
-	for (int i = 0; i < 9; i++)
-		for (int j = 0; j < 9; j++)
+	for (int i = 0; i < 8; i++)
+		for (int j = 0; j < 8; j++)
 			square[i][j] = 0;
 	for (int i = 0; i < 64; i++) {
-		int col = i % 8 + 1;
-		int row = 8 - i / 8;
+		int col = i % 8;
+		int row = 7 - i / 8;
 		square[row][col] = NEWGAME[i];
 	}
 	helpInit();
@@ -66,12 +68,12 @@ Board::Board() {
 }
 
 Board::Board(int input[64], bool next, int fiftyM, int castleW, int castleB, int epSq) {
-	for (int i = 0; i < 9; i++)
-		for (int j = 0; j < 9; j++)
+	for (int i = 0; i < 8; i++)
+		for (int j = 0; j < 8; j++)
 			square[i][j] = 0;
 	for (int i = 0; i < 64; i++) {
-		int col = i % 8 + 1;
-		int row = 8 - i / 8;
+		int col = i % 8;
+		int row = 7 - i / 8;
 		square[row][col] = input[i];
 	}
 	helpInit();
@@ -87,14 +89,14 @@ Board::Board(int input[64], bool next, int fiftyM, int castleW, int castleB, int
 
 Board::Board(std::string fen, std::string fencolor, std::string fencastling, std::string fenenpessant, std::string fenhalfmoveclock, std::string fenfullmove) {
 	// Init square and use helpInit to init bitset
-	for (int i = 0; i < 9; i++)
-		for (int j = 0; j < 9; j++)
+	for (int i = 0; i < 8; i++)
+		for (int j = 0; j < 8; j++)
 			square[i][j] = 0;
 	int len = fen.length();
-	int row = 1, col = 1;
+	int row = 0, col = 0;
 	for (int i = 0; i < len; i++) {
 		if (fen[i] == '/') {
-			row++, col = 1;
+			row++, col = 0;
 		} else if (isdigit(fen[i])) {
 			int num = fen[i] - '0';
 			col += num;
@@ -157,7 +159,7 @@ Board::Board(std::string fen, std::string fencolor, std::string fencastling, std
 	if (fencastling[2] == 'k') castleBlack |= 2;
 	if (fencastling[3] == 'q') castleBlack |= 1;
 
-	if (fenenpessant.length() == '1') epSquare = 0;
+	if (fenenpessant.length() == 1) epSquare = 0;
 	else {
 		epSquare = (fenenpessant[0] - 'a') * 8 + (fenenpessant[1] - '1');
 	}
@@ -167,16 +169,16 @@ Board::Board(std::string fen, std::string fencolor, std::string fencastling, std
 
 void Board::display() {
 	if (viewRotated) {
-		for (int i = 8; i >= 1; i--) {
-			for (int j = 1; j <= 8; j++) {
+		for (int i = 7; i >= 0; i--) {
+			for (int j = 0; j <= 7; j++) {
 				std::cout << PIECENAMES[square[i][j]];
 			}
 			std::cout << std::endl;
 		}
 		return;
 	}
-	for (int i = 1; i <= 8; i++) {
-		for (int j = 1; j <= 8; j++) {
+	for (int i = 0; i <= 7; i++) {
+		for (int j = 0; j <= 7; j++) {
 			std::cout << PIECENAMES[square[i][j]];
 		}
 		std::cout << std::endl;

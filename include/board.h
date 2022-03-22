@@ -17,7 +17,7 @@ class Board {
 	int castleWhite; // if white can still castle; left bit represents king side, right bit represents queen side
 	int castleBlack; // if black can still castle
 
-	int square[9][9];
+	int square[8][8];
 	int epSquare; // En-passant square?
 	int fiftyMove; // move since the last pawn move or capture
 	int material; // total material in centipawn, in white's perspective

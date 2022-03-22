@@ -37,8 +37,10 @@ int main() {
 	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
 	input >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
 	Board board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
+	std::cout << board.getWhiteKnights() << std::endl;
+	board.display();
 	Generator gen(board);
-	gen.generateWhiteKnightMoves();
-	gen.displayWhiteKnightMoves();
+	// gen.generateWhiteKnightMoves();
+	// gen.displayWhiteKnightMoves();
 	return 0;
 }
