@@ -25,6 +25,8 @@
 
 const int KNIGHT_MOVE_X[8] = {-1, -1, 1, 1, -2, -2, 2, 2};
 const int KNIGHT_MOVE_Y[8] = {2, -2, 2, -2, 1, -1, 1, -1};
+const int KING_MOVE_X[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
+const int KING_MOVE_Y[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
 
 const std::string SQUARENAME[64] = {"a1","b1","c1","d1","e1","f1","g1","h1",
                               "a2","b2","c2","d2","e2","f2","g2","h2",
@@ -104,5 +106,7 @@ const int NEWGAME[64] = {
 std::pair<int, int> intToPair(int num);
 
 int pairToInt(std::pair<int, int> p);
+
+void bitdisplay(ull x);
 
 #endif

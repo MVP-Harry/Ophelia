@@ -20,6 +20,13 @@ CMakeFiles/test.dir/src/generator.cpp.o
 CMakeFiles/test.dir/src/global.cpp.o
  /home/harry/CS/Ophelia/src/global.cpp
  include/global.h
+CMakeFiles/test.dir/src/main.cpp.o
+ /home/harry/CS/Ophelia/src/main.cpp
+ include/board.h
+ include/data.h
+ include/generator.h
+ include/global.h
+ include/move.h
 CMakeFiles/test.dir/src/move.cpp.o
  /home/harry/CS/Ophelia/src/move.cpp
  include/board.h

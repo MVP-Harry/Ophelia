@@ -10,6 +10,8 @@ class Generator {
 	Data data;
 	std::vector<Move> whiteKnighMoves;
 	std::vector<Move> blackKnightMoves;
+	std::vector<Move> whiteKingMoves;
+	std::vector<Move> blackKingMoves;
 
 	public: 
 
@@ -26,6 +28,12 @@ class Generator {
 	void generateBlackKnightMoves();
 
 	void displayBlackKnightMoves();
+
+	void generateWhiteKingMoves();
+
+	void displayWhiteKingMoves();
+
+	void displayBlackKingMoves();
 	
 	Board getBoard();
 

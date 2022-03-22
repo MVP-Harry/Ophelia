@@ -39,9 +39,21 @@ class Board {
 
 	bool getTurn();
 
+	bool whiteOO();
+
+	bool whiteOOO();
+
+	bool blackOOO();
+
+	bool blackOO();
+
 	ull getWhiteKnights();
 
 	ull getBlackKnights();
+
+	ull getWhiteKing();
+
+	ull getBlackKing();
 
 	int getPiece(int num);
 

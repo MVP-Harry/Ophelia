@@ -138,4 +138,5 @@ void Move::display() {
 	std::cout << "Piece is: " << PIECENAMES[getPiece()] << std::endl;
 	std::cout << "Capture is: " << PIECENAMES[getCapture()] << std::endl;
 	std::cout << "Color is: " << (isWhitemove() ? "WHITE" : "BLACK") << std::endl;
+	std::cout << "Is castle? " << (isCastle() ? "YES" : "NO") << std::endl;
 }

@@ -64,15 +64,49 @@ Board Generator::getBoard() {
 	return board;
 }
 
-int main() {
-	std::ifstream input("input.txt");
-	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
-	input >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
-	Board board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
-	Generator gen(board);
-	gen.generateWhiteKnightMoves();
-	gen.displayWhiteKnightMoves();
-	gen.generateBlackKnightMoves();
-	gen.displayBlackKnightMoves();
-	return 0;
+void Generator::generateWhiteKingMoves() {
+	ull whiteKing = board.getWhiteKing();
+	while (whiteKing) {
+		int x = highbit(whiteKing);
+		whiteKing ^= ((ull) 1 << x);
+		ull kingAttack = data.KING_ATTACK[x];
+		while (kingAttack) {
+			Move move;
+			int y = highbit(kingAttack);
+			kingAttack ^= ((ull) 1 << (ull) y);
+			move.setFrom(x);
+			move.setTo(y);
+			move.setPiece(WHITE_KING);
+			move.setCapture(board.getPiece(y));
+			whiteKingMoves.push_back(move);
+		}
+	}
+
+	// CASTLING
+	if (board.whiteOO() && board.getPiece(E1) == WHITE_KING && board.getPiece(H1) == WHITE_ROOK && board.getPiece(F1) == EMPTY && board.getPiece(G1) == EMPTY) {
+		Move move;
+		move.setFrom(E1);
+		move.setTo(G1);
+		move.setProm(WHITE_KING);
+		move.setPiece(WHITE_KING);
+		whiteKingMoves.push_back(move);
+	}
+
+	if (board.whiteOOO() && board.getPiece(E1) == WHITE_KING && board.getPiece(A1) == WHITE_ROOK && board.getPiece(B1) == EMPTY && board.getPiece(C1) == EMPTY && board.getPiece(D1) == EMPTY) {
+		Move move;
+		move.setFrom(E1);
+		move.setTo(C1);
+		move.setProm(WHITE_KING);
+		move.setPiece(WHITE_KING);
+		std::cout << move.getCapture() << std::endl;
+		whiteKingMoves.push_back(move);
+	}
 }
+
+void Generator::displayWhiteKingMoves() {
+	for (auto m : whiteKingMoves) {
+		m.display();
+		std::cout << std::endl;
+	}
+}
+

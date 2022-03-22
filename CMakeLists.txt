@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(Ophelia VERSION 1.0)
 
-set(SOURCE_FILES src/board.cpp src/move.cpp src/data.cpp src/generator.cpp src/global.cpp)
+set(SOURCE_FILES src/board.cpp src/move.cpp src/data.cpp src/generator.cpp src/global.cpp src/main.cpp)
 add_executable(test ${SOURCE_FILES})
 target_include_directories(test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 

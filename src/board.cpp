@@ -10,7 +10,7 @@ void Board::helpInit() {
 			int id = (7 - i) * 8 + j;
 			ull val = ((ull) 1 << (ull) id);
 			switch (square[i][j]) {
-				WHITE_KING:
+				case WHITE_KING:
 					whiteKing |= val;
 					break;
 				case WHITE_QUEEN:
@@ -197,12 +197,36 @@ bool Board::getTurn() {
 	return nextMove;
 }
 
+bool Board::whiteOO() {
+	return (castleWhite >> 1) & 1;
+}
+
+bool Board::whiteOOO() {
+	return castleWhite & 1;
+}
+
+bool Board::blackOO() {
+	return (castleBlack >> 1) & 1;
+}
+
+bool Board::blackOOO() {
+	return castleBlack & 1;
+}
+
 ull Board::getWhiteKnights() {
 	return whiteKnights;
 }
 
 ull Board::getBlackKnights() {
 	return blackKnights;
+}
+
+ull Board::getWhiteKing() {
+	return whiteKing;
+}
+
+ull Board::getBlackKing() {
+	return blackKing;
 }
 
 int Board::getPiece(int num) {
