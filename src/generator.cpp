@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <generator.h>
+#include <bitset>
 
 Generator::Generator(Board b) {
 	board = b;
@@ -10,14 +11,17 @@ void Generator::generateWhiteKnightMoves() {
 	ull whiteKnights = board.getWhiteKnights();
 	std::cout << whiteKnights << std::endl;
 	while (whiteKnights) {
-		int x = lowbit(whiteKnights);
+		std::cout << "fuck" << std::endl;
+		int x = highbit(whiteKnights);
 		whiteKnights ^= ((ull) 1 << x);
 		ull knightAttack = data.KNIGHT_ATTACK[x];
+		std::cout << std::bitset<64>(knightAttack) << std::endl;
 		while (knightAttack) {
 			Move move;
-			int y = lowbit(knightAttack);
+			int y = highbit(knightAttack);
 			knightAttack ^= ((ull) 1 << y);
-			move.setFrom(y);
+			move.setFrom(x);
+			move.setTo(y);
 			move.setPiece(WHITE_KNIGHT);
 			move.setCapture(board.getPiece(y));
 			whiteKnighMoves.push_back(move);
@@ -37,10 +41,8 @@ int main() {
 	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
 	input >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
 	Board board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
-	std::cout << board.getWhiteKnights() << std::endl;
-	board.display();
 	Generator gen(board);
-	// gen.generateWhiteKnightMoves();
+	gen.generateWhiteKnightMoves();
 	// gen.displayWhiteKnightMoves();
 	return 0;
 }

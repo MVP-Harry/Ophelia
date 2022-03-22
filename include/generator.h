@@ -15,9 +15,8 @@ class Generator {
 
 	Generator(Board b);
 
-	static ull lowbit(ull number) {
-		if (number == 0) throw std::invalid_argument("doesn't work bro!!");
-		return __builtin_ctz(number) + 1;
+	static ull highbit(ull number) {
+		return 63 - __builtin_clzll(number);
 	}
 
 	void generateWhiteKnightMoves(); 
