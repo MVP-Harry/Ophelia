@@ -8,19 +8,19 @@
 class Board {
 	// Using bitboard representation
 	// a1 is the first bit, while h8 is the last bit (from right to left)
-	ull whiteKing, whiteQueen, whiteRooks, whiteBishops, whiteKnights, whitePawns;
-	ull blackKing, blackQueen, blackRooks, blackBishops, blackKnights, blackPawns;
-	ull whitePieces, blackPieces, occupiedSquares;
+	ull whiteKing = 0, whiteQueen = 0, whiteRooks = 0, whiteBishops = 0, whiteKnights = 0, whitePawns = 0;
+	ull blackKing = 0, blackQueen = 0, blackRooks = 0, blackBishops = 0, blackKnights = 0, blackPawns = 0;
+	ull whitePieces = 0, blackPieces = 0, occupiedSquares = 0;
 
-	bool nextMove; // if nextMove is true, then it's white's turn
-	bool viewRotated;
-	int castleWhite; // if white can still castle; left bit represents king side, right bit represents queen side
-	int castleBlack; // if black can still castle
+	bool nextMove = true; // if nextMove is true, then it's white's turn
+	bool viewRotated = false;
+	int castleWhite = 3; // if white can still castle; left bit represents king side, right bit represents queen side
+	int castleBlack = 3; // if black can still castle
 
 	int square[8][8];
-	int epSquare; // En-passant square?
-	int fiftyMove; // move since the last pawn move or capture
-	int material; // total material in centipawn, in white's perspective
+	int epSquare = 0; // En-passant square?
+	int fiftyMove = 0; // move since the last pawn move or capture
+	int material = 0; // total material in centipawn, in white's perspective
 
 	void helpInit();
 
@@ -41,7 +41,10 @@ class Board {
 
 	ull getWhiteKnights();
 
+	ull getBlackKnights();
+
 	int getPiece(int num);
+
 };
 
 #endif

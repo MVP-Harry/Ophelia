@@ -23,7 +23,8 @@
 
 #define ull unsigned long long
 
-const int KNIGHT_MOVE[8] = {-17, -15, -10, -6, 6, 10, 15, 17};
+const int KNIGHT_MOVE_X[8] = {-1, -1, 1, 1, -2, -2, 2, 2};
+const int KNIGHT_MOVE_Y[8] = {2, -2, 2, -2, 1, -1, 1, -1};
 
 const std::string SQUARENAME[64] = {"a1","b1","c1","d1","e1","f1","g1","h1",
                               "a2","b2","c2","d2","e2","f2","g2","h2",
@@ -77,19 +78,19 @@ const int NEWGAME[64] = {
 // pawns and kings (without color bits), are < 3
 // major pieces (without color bits set), are > 5
 // minor and major pieces (without color bits set), are > 2
- const unsigned char EMPTY = 0;                //  0000
- const unsigned char WHITE_PAWN = 1;           //  0001
- const unsigned char WHITE_KING = 2;           //  0010
- const unsigned char WHITE_KNIGHT = 3;         //  0011
- const unsigned char WHITE_BISHOP =  5;        //  0101
- const unsigned char WHITE_ROOK = 6;           //  0110
- const unsigned char WHITE_QUEEN = 7;          //  0111
- const unsigned char BLACK_PAWN = 9;           //  1001
- const unsigned char BLACK_KING = 10;          //  1010
- const unsigned char BLACK_KNIGHT = 11;        //  1011
- const unsigned char BLACK_BISHOP = 13;        //  1101
- const unsigned char BLACK_ROOK = 14;          //  1110
- const unsigned char BLACK_QUEEN = 15;         //  1111
+ const int EMPTY = 0;                //  0000
+ const int WHITE_PAWN = 1;           //  0001
+ const int WHITE_KING = 2;           //  0010
+ const int WHITE_KNIGHT = 3;         //  0011
+ const int WHITE_BISHOP =  5;        //  0101
+ const int WHITE_ROOK = 6;           //  0110
+ const int WHITE_QUEEN = 7;          //  0111
+ const int BLACK_PAWN = 9;           //  1001
+ const int BLACK_KING = 10;          //  1010
+ const int BLACK_KNIGHT = 11;        //  1011
+ const int BLACK_BISHOP = 13;        //  1101
+ const int BLACK_ROOK = 14;          //  1110
+ const int BLACK_QUEEN = 15;         //  1111
 
  // Value of material, in centipawns:
  const int PAWN_VALUE = 100;
@@ -99,5 +100,9 @@ const int NEWGAME[64] = {
  const int QUEEN_VALUE = 900;
  const int KING_VALUE = 9999;
  const int CHECK_MATE = KING_VALUE;
+ 
+std::pair<int, int> intToPair(int num);
+
+int pairToInt(std::pair<int, int> p);
 
 #endif

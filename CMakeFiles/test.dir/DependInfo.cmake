@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/harry/CS/Ophelia/src/board.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/board.cpp.o"
   "/home/harry/CS/Ophelia/src/data.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/data.cpp.o"
   "/home/harry/CS/Ophelia/src/generator.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/generator.cpp.o"
+  "/home/harry/CS/Ophelia/src/global.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/global.cpp.o"
   "/home/harry/CS/Ophelia/src/move.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/move.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

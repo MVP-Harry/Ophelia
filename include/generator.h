@@ -25,6 +25,10 @@ class Generator {
 
 	void generateBlackKnightMoves();
 
+	void displayBlackKnightMoves();
+	
+	Board getBoard();
+
 };
 
 #endif

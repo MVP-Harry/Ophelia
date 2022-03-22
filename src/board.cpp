@@ -1,46 +1,50 @@
 #include "board.h"
+#include <bitset>
 #include <iostream>
+#include <utility>
 
 void Board::helpInit() {
+	//this is a comment
 	for (int i = 0; i <= 7; i++) {
 		for (int j = 0; j <= 7; j++) {
 			int id = (7 - i) * 8 + j;
+			ull val = ((ull) 1 << (ull) id);
 			switch (square[i][j]) {
-				case WHITE_KING:
-					whiteKing |= ((ull) 1 << id);
+				WHITE_KING:
+					whiteKing |= val;
 					break;
 				case WHITE_QUEEN:
-					whiteQueen |= ((ull) 1 << id);
+					whiteQueen |= val;
 					break;
 				case WHITE_ROOK:
-					whiteRooks |= ((ull) 1 << id);
+					whiteRooks |= val;
 					break;
 				case WHITE_BISHOP:
-					whiteBishops |= ((ull) 1 << id);
+					whiteBishops |= val;
 					break; 
 				case WHITE_KNIGHT: 
-					whiteKnights |= ((ull) 1 << id);
+					whiteKnights |= val;
 					break;
 				case WHITE_PAWN:
-					whitePawns |= ((ull) 1 << id);
+					whitePawns |= val;
 					break;
 				case BLACK_KING:
-					blackKing |= ((ull) 1 << id);
+					blackKing |= val;
 					break;
 				case BLACK_QUEEN:
-					blackQueen |= ((ull) 1 << id);
+					blackQueen |= val;
 					break;
 				case BLACK_ROOK:
-					blackRooks |= ((ull) 1 << id);
+					blackRooks |= val;
 					break;
 				case BLACK_BISHOP:
-					blackBishops |= ((ull) 1 << id);
+					blackBishops |= val;
 					break;
 				case BLACK_KNIGHT:
-					blackKnights |= ((ull) 1 << id);
+					blackKnights |= val;
 					break;
 				case BLACK_PAWN:
-					blackPawns |= ((ull) 1 << id);
+					blackPawns |= val;
 					break;
 			}
 		}
@@ -197,18 +201,13 @@ ull Board::getWhiteKnights() {
 	return whiteKnights;
 }
 
+ull Board::getBlackKnights() {
+	return blackKnights;
+}
+
 int Board::getPiece(int num) {
 	int r = num / 8;
 	int c = num % 8;
-	return square[8 - r][c];
+	return square[7 - r][c];
 }
 
-// int main() {
-// 	freopen("../Inputs/fen1.txt", "r", stdin);
-// 	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
-// 	std::cin >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
-// 	Board new_board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
-// 	new_board.display();
-// 	return 0;
-// }
-//

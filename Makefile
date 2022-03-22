@@ -204,6 +204,33 @@ src/generator.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/generator.cpp.s
 .PHONY : src/generator.cpp.s
 
+src/global.o: src/global.cpp.o
+
+.PHONY : src/global.o
+
+# target to build an object file
+src/global.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/global.cpp.o
+.PHONY : src/global.cpp.o
+
+src/global.i: src/global.cpp.i
+
+.PHONY : src/global.i
+
+# target to preprocess a source file
+src/global.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/global.cpp.i
+.PHONY : src/global.cpp.i
+
+src/global.s: src/global.cpp.s
+
+.PHONY : src/global.s
+
+# target to generate assembly for a file
+src/global.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/global.cpp.s
+.PHONY : src/global.cpp.s
+
 src/move.o: src/move.cpp.o
 
 .PHONY : src/move.o
@@ -249,6 +276,9 @@ help:
 	@echo "... src/generator.o"
 	@echo "... src/generator.i"
 	@echo "... src/generator.s"
+	@echo "... src/global.o"
+	@echo "... src/global.i"
+	@echo "... src/global.s"
 	@echo "... src/move.o"
 	@echo "... src/move.i"
 	@echo "... src/move.s"
