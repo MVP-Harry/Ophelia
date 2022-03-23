@@ -15,12 +15,15 @@ int main() {
 	// Generator gen(board);
 	// gen.generateWhiteKingMoves();
 	// gen.displayWhiteKingMoves();
-	Move move;
-	move.setPiece(WHITE_KING);
-	move.setProm(WHITE_KING);
-	move.setFrom(63);
-	move.setTo(60);
+	// Move move;
+	// move.setPiece(WHITE_KING);
+	// move.setProm(WHITE_KING);
+	// move.setFrom(63);
+	// move.setTo(60);
 
-	std::cout << move.getCapture() << std::endl;
+	// std::cout << move.getCapture() << std::endl;
+	
+	// Hi Max Roshen and Conner
+	// Vim is cool :)
 	return 0;
 }
