@@ -39,63 +39,63 @@ void Move::setProm(int prom) {
 }
 
 int Move::getFrom() {
-	return move & 0x0000003f; 
+	return move & 63;
 }
 
 int Move::getTo() {
-	return (move >> 6) & 0x0000003f;
+	return (move >> 6) & 63;
 }
 
 int Move::getPiece() {
-	return (move >> 12) & 0x0000003f;
+	return (move >> 12) & 15;
 }
 
 int Move::getCapture() {
-	return (move >> 16) & 0x0000003f;
+	return (move >> 16) & 15;
 }
 
 int Move::getProm() {
-	return (move >> 20) & 0x0000003f;
+	return (move >> 20) & 15;
 }
 
 bool Move::isWhitemove() {   
 	 // piec is white: bit 15 must be 0
-    return (~move & 0x00008000) == 0x00008000;
+    return ((move >> 15) & 1) == 0;
 } 
  
 bool Move::isBlackmove()  {
 	// piec is black: bit 15 must be 1
-	return ( move & 0x00008000) == 0x00008000;
+	return (move >> 15) & 1;
 } 
  
 bool Move::isCapture() {
    	// capt is nonzero, bits 16 to 19 must be nonzero
-    return (move & 0x000f0000) != 0x00000000;
+    return ((move >> 16) & 15) != 0;
 } 
  
 bool Move::isKingcaptured() {
    	// bits 17 to 19 must be 010
-    return (move & 0x00070000) == 0x00020000;
+    return ((move >> 17) & 7) == 2;
 } 
  
 bool Move::isRookmove() {
    	// bits 13 to 15 must be 110
-    return (move & 0x00007000) == 0x00006000;
+    return ((move >> 13) & 7) == 6;
 } 
  
 bool Move::isRookcaptured() {
 	// bits 17 to 19 must be 110
-    return (move & 0x00070000) == 0x00060000;
+    return ((move >> 17) & 7) == 6;
 } 
  
 bool Move::isKingmove() {
     // bits 13 to 15 must be 010
-    return (move & 0x00007000) == 0x00002000;
+    return ((move >> 13) & 7) == 2;
 } 
  
 bool Move::isPawnmove() {
     // bits 13 to 15 must be 001
-    return (move & 0x00007000) == 0x00001000;
+    return ((move >> 13) & 7) == 1;
 } 
  
 bool Move::isPawnDoublemove() {
@@ -103,13 +103,13 @@ bool Move::isPawnDoublemove() {
        //     bits 4 to 6 must be 001 (from rank 2) & bits 10 to 12 must be 011 (to rank 4)
     // OR: bits 4 to 6 must be 110 (from rank 7) & bits 10 to 12 must be 100 (to rank 5)
  
-    return ((( move & 0x00007000) == 0x00001000) && (((( move & 0x00000038) == 0x00000008) && ((( move & 0x00000e00) == 0x00000600))) || 
-                                                          ((( move & 0x00000038) == 0x00000030) && ((( move & 0x00000e00) == 0x00000800)))));
-} 
+  	return (((move >> 13) & 7) == 1 && ((move >> 4) & 7) == 1 && ((move >> 10) & 7) == 3) || 
+		(((move >> 13) & 7) == 1 && ((move >> 4) & 7) == 6  && ((move >> 10) & 7) == 4);
+ } 
  
 bool Move::isEnpassant() {
     // prom is a pawn, bits 21 to 23 must be 001
-    return (move & 0x00700000) == 0x00100000;
+    return ((move >> 21) & 7) == 1;
 } 
 
 bool Move::isPromotion() {
