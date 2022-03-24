@@ -229,9 +229,20 @@ ull Board::getBlackKing() {
 	return blackKing;
 }
 
+ull Board::getWhitePawns() {
+	return whitePawns;
+}
+
+ull Board::getBlackPawns() {
+	return blackPawns;
+}
+
 int Board::getPiece(int num) {
 	int r = num / 8;
 	int c = num % 8;
 	return square[7 - r][c];
 }
 
+int Board::getEnPassant() {
+	return epSquare;
+}

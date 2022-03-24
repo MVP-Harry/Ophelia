@@ -109,4 +109,6 @@ int pairToInt(std::pair<int, int> p);
 
 void bitdisplay(ull x);
 
+bool isSameFile(int x, int y);
+
 #endif

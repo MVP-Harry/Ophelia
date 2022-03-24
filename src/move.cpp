@@ -1,3 +1,4 @@
+#include "global.h"
 #include <iostream>
 #include <move.h>
 
@@ -109,27 +110,27 @@ bool Move::isPawnDoublemove() {
  
 bool Move::isEnpassant() {
     // prom is a pawn, bits 21 to 23 must be 001
-    return ((move >> 21) & 7) == 1;
+    return ((move >> 20) & 7) == 1;
 } 
 
 bool Move::isPromotion() {
     // prom (with color bit removed), .xxx > 2 (not king or pawn)
-    return (move & 0x00700000) >  0x00200000;
+    return ((move >> 20) & 7) > 2;
 } 
 
 bool Move::isCastle() {
     // prom is a king, bits 21 to 23 must be 010
-    return (move & 0x00700000) == 0x00200000;
+    return ((move >> 20) & 7) == 2;
 } 
 
 bool Move::isCastleOO() {
     // prom is a king and tosq is on the g-file
-    return (move & 0x007001c0) == 0x00200180;
+    return isCastle() && (getTo() % 8 == 6);
 } 
  
 bool Move::isCastleOOO() {   
 	// prom is a king and tosq is on the c-file
-    return (move & 0x007001c0) == 0x00200080;
+    return isCastle() && (getTo() % 8 == 2);
 }
 
 void Move::display() {
@@ -138,5 +139,7 @@ void Move::display() {
 	std::cout << "Piece is: " << PIECENAMES[getPiece()] << std::endl;
 	std::cout << "Capture is: " << PIECENAMES[getCapture()] << std::endl;
 	std::cout << "Color is: " << (isWhitemove() ? "WHITE" : "BLACK") << std::endl;
+	std::cout << "Promotion is: " << PIECENAMES[getProm()] << std::endl;
 	std::cout << "Is castle? " << (isCastle() ? "YES" : "NO") << std::endl;
+	std::cout << std::endl;
 }

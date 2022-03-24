@@ -12,6 +12,8 @@ class Generator {
 	std::vector<Move> blackKnightMoves;
 	std::vector<Move> whiteKingMoves;
 	std::vector<Move> blackKingMoves;
+	std::vector<Move> whitePawnMoves;
+	std::vector<Move> blackPawnMoves;
 
 	public: 
 
@@ -33,10 +35,19 @@ class Generator {
 
 	void displayWhiteKingMoves();
 
-	void displayBlackKingMoves();
-	
-	Board getBoard();
+	void generateBlackKingMoves();
 
+	void displayBlackKingMoves();
+
+	void generateWhitePawnMoves();
+
+	void generateBlackPawnMoves();
+
+	void displayWhitePawnMoves();
+
+	void displayBlackPawnMoves();
+
+	Board getBoard();
 };
 
 #endif

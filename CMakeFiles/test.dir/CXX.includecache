@@ -6,20 +6,16 @@
 
 #IncludeRegexTransform: 
 
-/home/harry/CS/Ophelia/src/main.cpp
-iostream
--
-fstream
+/home/harry/CS/Ophelia/src/data.cpp
+global.h
+/home/harry/CS/Ophelia/src/global.h
+data.h
 -
 board.h
 -
-global.h
+iostream
 -
-generator.h
--
-move.h
--
-data.h
+utility
 -
 
 include/board.h
@@ -34,19 +30,7 @@ include/data.h
 global.h
 -
 
-include/generator.h
-vector
--
-data.h
--
-move.h
--
-
 include/global.h
 string
--
-
-include/move.h
-board.h
 -
 

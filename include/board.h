@@ -55,6 +55,12 @@ class Board {
 
 	ull getBlackKing();
 
+	ull getWhitePawns();
+
+	ull getBlackPawns();
+
+	int getEnPassant();
+
 	int getPiece(int num);
 
 };

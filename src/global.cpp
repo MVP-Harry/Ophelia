@@ -15,3 +15,7 @@ int pairToInt(std::pair<int, int> p) {
 void bitdisplay(ull x) {
 	std::cout << std::bitset<64>(x) << std::endl;
 }
+
+bool isSameFile(int x, int y) {
+	return (x % 8) == (y % 8);
+}
