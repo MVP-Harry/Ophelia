@@ -7,6 +7,7 @@
 
 class Generator {
 	Board board;
+	// fix this issue
 	Data data;
 	std::vector<Move> whiteKnighMoves;
 	std::vector<Move> blackKnightMoves;

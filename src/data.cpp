@@ -8,6 +8,7 @@ Data::Data() {
 	genKnight();
 	genKing();
 	genPawns();
+	genRank();
 }
 
 void Data::genKnight() {
@@ -73,5 +74,45 @@ void Data::genPawns() {
 
 		WHITE_PAWN_ATTACK[i] = val;
 		BLACK_PAWN_ATTACK[i] = val2;
+	}
+}
+
+void Data::genRank() {
+	for (int i = 0; i < 64; i++) {
+		for (int j = 0; j < 64; j++) {
+			ull val = 0;
+			int l = i - 1, r = i + 1;
+			while (l / 8 == i / 8) {
+				val |= ((ull) 1 << (ull) l);
+				if ((j >> (6 - (l % 8))) & 1) break;
+				l--;
+			}
+			while (r / 8 == i / 8) {
+				val |= ((ull) 1 << (ull) r);
+				if ((j >> (6 - (r % 8))) & 1) break;
+				r++;
+			}
+			RANK_ATTACK[i][j] = val;
+		}
+	}
+}
+
+void Data::genFile() {
+	for (int i = 0; i < 64; i++) {
+		for (int j = 0; j < 64; j++) {
+			ull val = 0;
+			int l = i - 8, r = i + 8;
+			while (l >= 0) {
+				val |= ((ull) 1 << (ull) l);
+				if ((j >> (6 - (l / 8))) & 1) break;
+				l -= 8;
+			}
+			while (r <= 63) {
+				val |= ((ull) 1 << (ull) r);
+				if ((j >> (6 - (r / 8))) & 1) break;
+				r += 8;
+			}
+			FILE_ATTACK[i][j] = val;
+		}
 	}
 }

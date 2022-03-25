@@ -18,6 +18,30 @@ iostream
 utility
 -
 
+/home/harry/CS/Ophelia/src/generator.cpp
+global.h
+-
+fstream
+-
+iostream
+-
+generator.h
+-
+bitset
+-
+
+/home/harry/CS/Ophelia/src/main.cpp
+generator.h
+/home/harry/CS/Ophelia/src/generator.h
+global.h
+-
+iostream
+-
+move.h
+-
+fstream
+-
+
 include/board.h
 iostream
 -
@@ -30,7 +54,19 @@ include/data.h
 global.h
 -
 
+include/generator.h
+vector
+-
+data.h
+-
+move.h
+-
+
 include/global.h
 string
+-
+
+include/move.h
+board.h
 -
 

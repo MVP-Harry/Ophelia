@@ -9,8 +9,8 @@ int main() {
 	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
 	input >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
 	Board board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
-	Generator gen(board);
-	gen.generateBlackPawnMoves();
-	gen.displayBlackPawnMoves();
+	Data data;
+	bitdisplay(data.RANK_ATTACK[E1][21]);
+	std::cout << (1 >> (-1)) << std::endl;;
 	return 0;
 }

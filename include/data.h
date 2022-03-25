@@ -10,6 +10,8 @@ class Data {
 	ull KING_ATTACK[64];
 	ull WHITE_PAWN_ATTACK[64];
 	ull BLACK_PAWN_ATTACK[64];
+	ull RANK_ATTACK[64][64];
+	ull FILE_ATTACK[64][64];
 
 	Data();
 
@@ -18,6 +20,10 @@ class Data {
 	void genKing();
 
 	void genPawns();
+
+	void genRank();
+
+	void genFile();
 };
 
 #endif
