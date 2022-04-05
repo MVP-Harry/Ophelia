@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/harry/CS/Ophelia/src/board.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/board.cpp.o"
-  "/home/harry/CS/Ophelia/src/data.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/data.cpp.o"
   "/home/harry/CS/Ophelia/src/generator.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/generator.cpp.o"
   "/home/harry/CS/Ophelia/src/global.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/global.cpp.o"
   "/home/harry/CS/Ophelia/src/main.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/main.cpp.o"

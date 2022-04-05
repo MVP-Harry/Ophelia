@@ -150,33 +150,6 @@ src/board.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/board.cpp.s
 .PHONY : src/board.cpp.s
 
-src/data.o: src/data.cpp.o
-
-.PHONY : src/data.o
-
-# target to build an object file
-src/data.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/data.cpp.o
-.PHONY : src/data.cpp.o
-
-src/data.i: src/data.cpp.i
-
-.PHONY : src/data.i
-
-# target to preprocess a source file
-src/data.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/data.cpp.i
-.PHONY : src/data.cpp.i
-
-src/data.s: src/data.cpp.s
-
-.PHONY : src/data.s
-
-# target to generate assembly for a file
-src/data.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/data.cpp.s
-.PHONY : src/data.cpp.s
-
 src/generator.o: src/generator.cpp.o
 
 .PHONY : src/generator.o
@@ -297,9 +270,6 @@ help:
 	@echo "... src/board.o"
 	@echo "... src/board.i"
 	@echo "... src/board.s"
-	@echo "... src/data.o"
-	@echo "... src/data.i"
-	@echo "... src/data.s"
 	@echo "... src/generator.o"
 	@echo "... src/generator.i"
 	@echo "... src/generator.s"

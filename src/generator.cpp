@@ -13,7 +13,7 @@ void Generator::generateWhiteKnightMoves() {
 	while (whiteKnights) {
 		int x = highbit(whiteKnights);
 		whiteKnights ^= ((ull) 1 << x);
-		ull knightAttack = data.KNIGHT_ATTACK[x];
+		ull knightAttack = KNIGHT_ATTACK[x];
 		while (knightAttack) {
 			Move move;
 			int y = highbit(knightAttack);
@@ -41,7 +41,7 @@ void Generator::generateBlackKnightMoves() {
 	while (blackKnights) {
 		int x = highbit(blackKnights);
 		blackKnights ^= ((ull) 1 << x);
-		ull knightAttack = data.KNIGHT_ATTACK[x];
+		ull knightAttack = KNIGHT_ATTACK[x];
 		while (knightAttack) {
 			Move move;
 			int y = highbit(knightAttack);
@@ -73,7 +73,7 @@ void Generator::generateWhiteKingMoves() {
 	while (whiteKing) {
 		int x = highbit(whiteKing);
 		whiteKing ^= ((ull) 1 << x);
-		ull kingAttack = data.KING_ATTACK[x];
+		ull kingAttack = KING_ATTACK[x];
 		while (kingAttack) {
 			Move move;
 			int y = highbit(kingAttack);
@@ -120,7 +120,7 @@ void Generator::generateBlackKingMoves() {
 	while (blackKing) {
 		int x = highbit(blackKing);
 		blackKing ^= ((ull) 1 << x);
-		ull kingAttack = data.KING_ATTACK[x];
+		ull kingAttack = KING_ATTACK[x];
 		while (kingAttack) {
 			Move move;
 			int y = highbit(kingAttack);
@@ -167,7 +167,7 @@ void Generator::generateWhitePawnMoves() {
 	while (whitePawns) {
 		int x = highbit(whitePawns);
 		whitePawns ^= ((ull) 1 << (ull) x);
-		ull pawnAttack = data.WHITE_PAWN_ATTACK[x];
+		ull pawnAttack = WHITE_PAWN_ATTACK[x];
 		while (pawnAttack) {
 			int y = highbit(pawnAttack);
 			pawnAttack ^= ((ull) 1 << (ull) y);
@@ -212,7 +212,7 @@ void Generator::generateBlackPawnMoves() {
 	while (blackPawns) {
 		int x = highbit(blackPawns);
 		blackPawns ^= ((ull) 1 << (ull) x);
-		ull pawnAttack = data.BLACK_PAWN_ATTACK[x];
+		ull pawnAttack = BLACK_PAWN_ATTACK[x];
 		while (pawnAttack) {
 			int y = highbit(pawnAttack);
 			pawnAttack ^= ((ull) 1 << (ull) y);

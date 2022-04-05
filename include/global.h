@@ -102,6 +102,21 @@ const int NEWGAME[64] = {
  const int QUEEN_VALUE = 900;
  const int KING_VALUE = 9999;
  const int CHECK_MATE = KING_VALUE;
+
+extern ull KNIGHT_ATTACK[64];
+extern ull KING_ATTACK[64];
+extern ull WHITE_PAWN_ATTACK[64];
+extern ull BLACK_PAWN_ATTACK[64];
+extern ull RANK_ATTACK[64][64];
+extern ull FILE_ATTACK[64][64];
+
+void genKnight();
+
+void genKing();
+
+void genPawns();
+
+void init();
  
 std::pair<int, int> intToPair(int num);
 

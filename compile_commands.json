@@ -11,11 +11,6 @@
 },
 {
   "directory": "/home/harry/CS/Ophelia",
-  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/data.cpp.o -c /home/harry/CS/Ophelia/src/data.cpp",
-  "file": "/home/harry/CS/Ophelia/src/data.cpp"
-},
-{
-  "directory": "/home/harry/CS/Ophelia",
   "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/generator.cpp.o -c /home/harry/CS/Ophelia/src/generator.cpp",
   "file": "/home/harry/CS/Ophelia/src/generator.cpp"
 },

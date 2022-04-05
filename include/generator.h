@@ -2,13 +2,11 @@
 #define GENERATOR_H
 
 #include <vector>
-#include <data.h>
 #include <move.h>
 
 class Generator {
 	Board board;
-	// fix this issue
-	Data data;
+
 	std::vector<Move> whiteKnighMoves;
 	std::vector<Move> blackKnightMoves;
 	std::vector<Move> whiteKingMoves;
