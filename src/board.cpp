@@ -1,7 +1,6 @@
 #include "board.h"
 #include <bitset>
 #include <iostream>
-#include <utility>
 
 void Board::helpInit() {
 	//this is a comment
@@ -69,6 +68,7 @@ Board::Board() {
 	epSquare = 0; // ????
 	whitePieces = whiteKing | whiteQueen | whiteBishops | whiteKnights | whiteRooks | whitePawns;
 	blackPieces = blackKing | blackQueen | blackBishops | blackKnights | blackRooks | blackPawns;
+	occupiedSquares = whitePieces | blackPieces;
 }
 
 Board::Board(int input[64], bool next, int fiftyM, int castleW, int castleB, int epSq) {
@@ -89,6 +89,7 @@ Board::Board(int input[64], bool next, int fiftyM, int castleW, int castleB, int
 	epSquare = epSq;
 	whitePieces = whiteKing | whiteQueen | whiteBishops | whiteKnights | whiteRooks | whitePawns;
 	blackPieces = blackKing | blackQueen | blackBishops | blackKnights | blackRooks | blackPawns;
+	occupiedSquares = whitePieces | blackPieces;
 }
 
 Board::Board(std::string fen, std::string fencolor, std::string fencastling, std::string fenenpessant, std::string fenhalfmoveclock, std::string fenfullmove) {
@@ -150,6 +151,7 @@ Board::Board(std::string fen, std::string fencolor, std::string fencastling, std
 	helpInit();
 	whitePieces = whiteKing | whiteQueen | whiteBishops | whiteKnights | whiteRooks | whitePawns;
 	blackPieces = blackKing | blackQueen | blackBishops | blackKnights | blackRooks | blackPawns;
+	occupiedSquares = whitePieces | blackPieces;
 
 	viewRotated = false;
 
@@ -245,4 +247,8 @@ int Board::getPiece(int num) {
 
 int Board::getEnPassant() {
 	return epSquare;
+}
+
+ull Board::getOccupiedSquares() {
+	return occupiedSquares;
 }

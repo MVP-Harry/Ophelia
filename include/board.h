@@ -63,6 +63,8 @@ class Board {
 
 	int getPiece(int num);
 
+	ull getOccupiedSquares();
+
 };
 
 #endif

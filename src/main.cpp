@@ -9,6 +9,8 @@ int main() {
 	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
 	input >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
 	Board board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
-
+	init();
+	Generator gen(board);
+	bitdisplay(gen.genDiagA8H1State(F3));
 	return 0;
 }

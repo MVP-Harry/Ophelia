@@ -251,3 +251,27 @@ void Generator::displayBlackPawnMoves() {
 		m.display();
 	}
 }
+
+int Generator::genFileState(int x) {
+	// from top to bottom
+	ull target = board.getOccupiedSquares();
+	return ((target & FILE_MASK[x]) * MAGIC_FILE[FILES[x] - 1]) >> 57;
+}
+
+int Generator::genRankState(int x) {
+	// from left to right
+	ull target = board.getOccupiedSquares();
+	return (target & RANK_MASK[x]) >> (x - x % 8 + 1);
+}
+
+int Generator::genDiagA1H8State(int x) {
+	// from bottom to top
+	ull target = board.getOccupiedSquares();
+	return ((target & DIAG_A1H8_MASK[x]) * MAGIC_DIAG_A1H8[FILES[x] - RANKS[x] + 7]) >> 57;
+}
+
+int Generator::genDiagA8H1State(int x) {
+	// from top to bottom
+	ull target = board.getOccupiedSquares();
+	return ((target & DIAG_A8H1_MASK[x]) * MAGIC_DIAG_A8H1[RANKS[x] + FILES[x] - 2]) >> 57;
+}

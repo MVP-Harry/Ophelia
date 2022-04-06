@@ -46,6 +46,14 @@ class Generator {
 
 	void displayBlackPawnMoves();
 
+	int genRankState(int x);
+
+	int genFileState(int x);
+
+	int genDiagA1H8State(int x);
+
+	int genDiagA8H1State(int x);
+
 	Board getBoard();
 };
 

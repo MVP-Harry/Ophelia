@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <string.h>
 #include <global.h>
 #include <iostream>
 #include <bitset>
@@ -6,6 +8,10 @@ ull KNIGHT_ATTACK[64];
 ull KING_ATTACK[64];
 ull WHITE_PAWN_ATTACK[64];
 ull BLACK_PAWN_ATTACK[64];
+ull RANK_MASK[64];
+ull FILE_MASK[64];
+ull DIAG_A1H8_MASK[64];
+ull DIAG_A8H1_MASK[64];
 ull RANK_ATTACK[64][64];
 ull FILE_ATTACK[64][64];
 
@@ -93,8 +99,60 @@ void genPawns() {
 	}
 }
 
+void genRankMask() {
+	ull tempRank[8];
+	memset(tempRank, 0, sizeof tempRank);
+	for (int i = 0; i < 64; i++) {
+		if (FILES[i] != 1 && FILES[i] != 8) {
+			tempRank[RANKS[i] - 1] |= ((ull) 1 << i);
+		}
+	}
+	for (int i = 0; i < 64; i++) {
+		RANK_MASK[i] = tempRank[RANKS[i] - 1];
+	}
+}
+
+void genFileMask() {
+	ull tempFile[8];
+	memset(tempFile, 0, sizeof tempFile);
+	for (int i = 0; i < 64; i++) {
+		if (RANKS[i] != 1 && RANKS[i] != 8) {
+			tempFile[FILES[i] - 1] |= ((ull) 1 << i);
+		}
+	}
+	for (int i = 0; i < 64; i++) {
+		FILE_MASK[i] = tempFile[FILES[i] - 1];
+	}
+}
+
+void genDiagMask() {
+	ull tempDiag[15];
+	memset(tempDiag, 0, sizeof tempDiag);
+	for (int i = 0; i < 64; i++) {
+		if (RANKS[i] != 1 && RANKS[i] != 8 && FILES[i] != 1 && FILES[i] != 8) {
+			tempDiag[RANKS[i] + FILES[i] - 2] |= ((ull) 1 << i);
+		}
+	}
+	for (int i = 0; i < 64; i++) {
+		DIAG_A8H1_MASK[i] = tempDiag[RANKS[i] + FILES[i] - 2];
+	}
+
+	memset(tempDiag, 0, sizeof tempDiag);
+	for (int i = 0; i < 64; i++) {
+		if (RANKS[i] != 1 && RANKS[i] != 8 && FILES[i] != 1 && FILES[i] != 8) {
+			tempDiag[FILES[i] - RANKS[i] + 7] |= ((ull) 1 << i);
+		}
+	}
+	for (int i = 0; i < 64; i++) {
+		DIAG_A1H8_MASK[i] = tempDiag[FILES[i] - RANKS[i] + 7];
+	}
+}
+
 void init() {
 	genKnight();
 	genPawns();
 	genKing();
+	genDiagMask();
+	genRankMask();
+	genFileMask();
 }
