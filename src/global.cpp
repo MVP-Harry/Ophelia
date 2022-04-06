@@ -12,6 +12,7 @@ ull RANK_MASK[64];
 ull FILE_MASK[64];
 ull DIAG_A1H8_MASK[64];
 ull DIAG_A8H1_MASK[64];
+ull GENERALIZED_ATTACK[8][64];
 ull RANK_ATTACK[64][64];
 ull FILE_ATTACK[64][64];
 
@@ -145,6 +146,14 @@ void genDiagMask() {
 	}
 	for (int i = 0; i < 64; i++) {
 		DIAG_A1H8_MASK[i] = tempDiag[FILES[i] - RANKS[i] + 7];
+	}
+}
+
+void genGeneralizedAttack() {
+	for (int pos = 0; pos < 8; pos++) {
+		for (int mask = 0; mask < 64; mask++) {
+
+		}
 	}
 }
 
