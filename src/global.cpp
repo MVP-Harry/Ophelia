@@ -178,9 +178,21 @@ void genGeneralizedAttack() {
 void genRankAttack() {
 	for (int square = 0; square < 64; square++) {
 		for (int occ = 0; occ < 64; occ++) {
-
+			int row = square / 8;
+			int col = square % 8;
+			int attack = GENERALIZED_ATTACK[col][occ];
+			for (int bit = 0; bit < 8; bit++) {
+				if ((attack >> bit) & 1) {
+					int newSquare = row * 8 + bit;
+					RANK_ATTACK[square][occ] |= ((ull) 1 << newSquare);
+				}
+			}
 		}
 	}
+}
+
+void genFileAttack() {
+
 }
 
 void init() {
@@ -191,4 +203,6 @@ void init() {
 	genRankMask();
 	genFileMask();
 	genGeneralizedAttack();
+	genRankAttack();
+	genFileAttack();
 }
