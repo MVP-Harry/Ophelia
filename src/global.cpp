@@ -152,6 +152,32 @@ void genDiagMask() {
 void genGeneralizedAttack() {
 	for (int pos = 0; pos < 8; pos++) {
 		for (int mask = 0; mask < 64; mask++) {
+			int eightBitOccupancy = mask << 1;
+			eightBitOccupancy |= 1;
+			eightBitOccupancy |= (1 << 7);
+			if (pos == 0 && mask == 9) {
+				bitdisplay(eightBitOccupancy);
+			}
+			ull attack = 0;
+			int l = pos - 1, r = pos + 1;
+			while (l >= 0) {
+				attack |= (1 << (7 - l));
+				if ((eightBitOccupancy >> (7 - l)) & 1) break;
+				l--;
+			}
+			while (r <= 7) {
+				attack |= (1 << (7 - r));
+				if ((eightBitOccupancy >> (7 - r)) & 1) break;
+				r++;
+			}
+			GENERALIZED_ATTACK[pos][mask] = attack;
+		}
+	}
+}
+
+void genRankAttack() {
+	for (int square = 0; square < 64; square++) {
+		for (int occ = 0; occ < 64; occ++) {
 
 		}
 	}
@@ -164,4 +190,5 @@ void init() {
 	genDiagMask();
 	genRankMask();
 	genFileMask();
+	genGeneralizedAttack();
 }

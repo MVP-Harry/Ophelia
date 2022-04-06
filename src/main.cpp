@@ -11,6 +11,5 @@ int main() {
 	Board board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
 	init();
 	Generator gen(board);
-	bitdisplay(gen.genDiagA8H1State(F3));
 	return 0;
 }

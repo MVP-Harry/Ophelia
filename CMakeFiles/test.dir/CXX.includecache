@@ -6,37 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/harry/CS/Ophelia/src/main.cpp
-generator.h
-/home/harry/CS/Ophelia/src/generator.h
+/home/harry/CS/Ophelia/src/global.cpp
+stdio.h
+-
+string.h
+-
 global.h
 -
 iostream
 -
-move.h
--
-fstream
--
-
-include/board.h
-iostream
--
-global.h
-include/global.h
-string
--
-
-include/generator.h
-vector
--
-move.h
+bitset
 -
 
 include/global.h
 string
--
-
-include/move.h
-board.h
 -
 
