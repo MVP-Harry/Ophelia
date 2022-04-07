@@ -14,5 +14,6 @@ int main() {
 	bitdisplay(gen.genRankState(E4));
 	std::cout << gen.genRankState(E4) << std::endl;
 	bitdisplay(GENERALIZED_ATTACK[4][gen.genRankState(E4)]);
+	bitdisplay(RANK_ATTACK[E4][gen.genRankState(E4)]);
 	return 0;
 }

@@ -27,7 +27,13 @@ int pairToInt(std::pair<int, int> p) {
 }
 
 void bitdisplay(ull x) {
-	std::cout << std::bitset<64>(x) << std::endl;
+	std::cout << "The 1 bit position are: ";
+	for (int i = 0; i < 64; i++) {
+		if ((x >> i) & 1) {
+			std::cout << i << " ";
+		}
+	}
+	std::cout << "\n";
 }
 
 bool isSameFile(int x, int y) {
@@ -157,12 +163,12 @@ void genGeneralizedAttack() {
 			ull attack = 0;
 			int l = pos - 1, r = pos + 1;
 			while (l >= 0) {
-				attack |= (1 << (7 - l));
+				attack |= (1 << l);
 				if ((newOcc >> l) & 1) break;
 				l--;
 			}
 			while (r <= 7) {
-				attack |= (1 << (7 - r));
+				attack |= (1 << r);
 				if ((newOcc >> r) & 1) break;
 				r++;
 			}
