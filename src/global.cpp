@@ -152,19 +152,18 @@ void genDiagMask() {
 void genGeneralizedAttack() {
 	for (int pos = 0; pos < 8; pos++) {
 		for (int mask = 0; mask < 64; mask++) {
-			int eightBitOccupancy = mask << 1;
-			eightBitOccupancy |= 1;
-			eightBitOccupancy |= (1 << 7);
+			int newOcc = mask;
+			newOcc <<= 1;
 			ull attack = 0;
 			int l = pos - 1, r = pos + 1;
 			while (l >= 0) {
 				attack |= (1 << (7 - l));
-				if ((eightBitOccupancy >> (7 - l)) & 1) break;
+				if ((newOcc >> l) & 1) break;
 				l--;
 			}
 			while (r <= 7) {
 				attack |= (1 << (7 - r));
-				if ((eightBitOccupancy >> (7 - r)) & 1) break;
+				if ((newOcc >> r) & 1) break;
 				r++;
 			}
 			GENERALIZED_ATTACK[pos][mask] = attack;
