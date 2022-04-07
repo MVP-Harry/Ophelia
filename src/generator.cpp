@@ -260,6 +260,7 @@ int Generator::genFileState(int x) {
 
 int Generator::genRankState(int x) {
 	// from left to right
+	// LSB represents the smaller indices
 	ull target = board.getOccupiedSquares();
 	return (target & RANK_MASK[x]) >> (x - x % 8 + 1);
 }

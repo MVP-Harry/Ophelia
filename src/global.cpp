@@ -155,9 +155,6 @@ void genGeneralizedAttack() {
 			int eightBitOccupancy = mask << 1;
 			eightBitOccupancy |= 1;
 			eightBitOccupancy |= (1 << 7);
-			if (pos == 0 && mask == 9) {
-				bitdisplay(eightBitOccupancy);
-			}
 			ull attack = 0;
 			int l = pos - 1, r = pos + 1;
 			while (l >= 0) {
