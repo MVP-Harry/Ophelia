@@ -194,7 +194,19 @@ void genRankAttack() {
 }
 
 void genFileAttack() {
-
+	for (int square = 0; square < 64; square++) {
+		for (int occ = 0; occ < 64; occ++) {
+			int row = square / 8;
+			int col = square % 8;
+			int attack = GENERALIZED_ATTACK[7 - row][occ];
+			for (int bit = 0; bit < 8; bit++) {
+				if ((attack >> bit) & 1) {
+					int newSquare = (7 - bit) * 8 + col;
+					FILE_ATTACK[square][occ] |= ((ull) 1 << newSquare);
+				}
+			}
+		}
+	}
 }
 
 void init() {

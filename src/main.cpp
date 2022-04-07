@@ -11,9 +11,6 @@ int main() {
 	Board board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
 	init();
 	Generator gen(board);
-	bitdisplay(gen.genRankState(E4));
-	std::cout << gen.genRankState(E4) << std::endl;
-	bitdisplay(GENERALIZED_ATTACK[4][gen.genRankState(E4)]);
-	bitdisplay(RANK_ATTACK[E4][gen.genRankState(E4)]);
+	bitdisplay(FILE_ATTACK[D3][gen.genFileState(D3)]);
 	return 0;
 }
