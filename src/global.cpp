@@ -209,6 +209,21 @@ void genFileAttack() {
 	}
 }
 
+void genA1H8Attack() {
+	for (int square = 0; square < 64; square++) {
+		for (int occ = 0; occ < 64; occ++) {
+			int row = square / 8;
+			int col = square % 8;
+			int id;
+			if (col >= row) id = row;
+			else id = col;
+			for (int bit = 0; bit < 8; bit++) {
+				
+			}
+		}
+	}
+}
+
 void init() {
 	genKnight();
 	genPawns();

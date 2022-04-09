@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/harry/CS/Ophelia/src/global.cpp
-stdio.h
--
-string.h
--
-global.h
--
-iostream
--
-bitset
--
-
 /home/harry/CS/Ophelia/src/main.cpp
 generator.h
 /home/harry/CS/Ophelia/src/generator.h
