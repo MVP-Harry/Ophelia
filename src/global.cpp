@@ -15,6 +15,8 @@ ull DIAG_A8H1_MASK[64];
 ull GENERALIZED_ATTACK[8][64];
 ull RANK_ATTACK[64][64];
 ull FILE_ATTACK[64][64];
+ull DIAG_A1H8_ATTACK[64][64];
+ull DIAG_A8H1_ATTACK[64][64];
 
 std::pair<int, int> intToPair(int num) {
 	int r = 7 - num / 8;
@@ -217,8 +219,37 @@ void genA1H8Attack() {
 			int id;
 			if (col >= row) id = row;
 			else id = col;
+			int attack = GENERALIZED_ATTACK[id][occ];
 			for (int bit = 0; bit < 8; bit++) {
-				
+				if (bit + std::abs(col - row) >= 8) continue;
+				if ((attack >> bit) & 1) {
+					int newSquare;
+					if (col >= row) newSquare = bit * 9 + (col - row);
+					else newSquare = bit * 9 + (row - col) * 8;
+					DIAG_A1H8_ATTACK[square][occ] |= ((ull) 1 << newSquare);
+				}
+			}
+		}
+	}
+}
+
+void genA8H1Attack() {
+	for (int square = 0; square < 64; square++) {
+		for (int occ = 0; occ < 64; occ++) {
+			int row = square / 8;
+			int col = square % 8;
+			int id;
+			if (7 - row >= col) id = col;
+			else id = 7 - row;
+			int attack = GENERALIZED_ATTACK[id][occ];
+			for (int bit = 0; bit < 8; bit++) {
+				if (bit + std::abs(7 - row - col) >= 8) continue;
+				if ((attack >> bit) & 1) {
+					int newSquare;
+					if (7 - row >= col) newSquare = (7 - bit) * 8 + bit - 8 * (7 - row - col);
+					else newSquare = (7 - row) * 8 + col + (col - 7 + row);
+					DIAG_A8H1_ATTACK[square][occ] |= ((ull) 1 << newSquare);
+				}
 			}
 		}
 	}
@@ -234,4 +265,6 @@ void init() {
 	genGeneralizedAttack();
 	genRankAttack();
 	genFileAttack();
+	genA1H8Attack();
+	genA8H1Attack();
 }
