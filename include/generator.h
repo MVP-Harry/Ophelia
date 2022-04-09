@@ -13,6 +13,12 @@ class Generator {
 	std::vector<Move> blackKingMoves;
 	std::vector<Move> whitePawnMoves;
 	std::vector<Move> blackPawnMoves;
+	std::vector<Move> whiteBishopMoves;
+	std::vector<Move> whiteRookMoves;
+	std::vector<Move> whiteQueenMoves;
+	std::vector<Move> blackBishopMoves;
+	std::vector<Move> blackRookMoves;
+	std::vector<Move> blackQueenMoves;
 
 	public: 
 

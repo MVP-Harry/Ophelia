@@ -10,16 +10,16 @@ Generator::Generator(Board b) {
 
 void Generator::generateWhiteKnightMoves() {
 	ull whiteKnights = board.getWhiteKnights();
+	ull whitePieces = board.getWhitePieces();
 	while (whiteKnights) {
 		int x = highbit(whiteKnights);
 		whiteKnights ^= ((ull) 1 << x);
-		ull knightAttack = KNIGHT_ATTACK[x];
+		ull knightAttack = KNIGHT_ATTACK[x] & (~whitePieces);
 		while (knightAttack) {
 			Move move;
 			int y = highbit(knightAttack);
 			knightAttack ^= ((ull) 1 << (ull) y);
 			int att = board.getPiece(y);
-			if (att != EMPTY && att <= 8) continue;
 			move.setFrom(x);
 			move.setTo(y);
 			move.setPiece(WHITE_KNIGHT);
@@ -38,15 +38,15 @@ void Generator::displayWhiteKnightMoves() {
 
 void Generator::generateBlackKnightMoves() {
 	ull blackKnights = board.getBlackKnights();
+	ull blackPieces = board.getBlackPieces();
 	while (blackKnights) {
 		int x = highbit(blackKnights);
 		blackKnights ^= ((ull) 1 << x);
-		ull knightAttack = KNIGHT_ATTACK[x];
+		ull knightAttack = KNIGHT_ATTACK[x] & (~blackPieces);
 		while (knightAttack) {
 			Move move;
 			int y = highbit(knightAttack);
 			int att = board.getPiece(y);
-			if (att != EMPTY && att >= 8) continue;
 			knightAttack ^= ((ull) 1 << (ull) y);
 			move.setFrom(x);
 			move.setTo(y);
@@ -70,16 +70,16 @@ Board Generator::getBoard() {
 
 void Generator::generateWhiteKingMoves() {
 	ull whiteKing = board.getWhiteKing();
+	ull whitePieces = board.getWhitePieces();
 	while (whiteKing) {
 		int x = highbit(whiteKing);
 		whiteKing ^= ((ull) 1 << x);
-		ull kingAttack = KING_ATTACK[x];
+		ull kingAttack = KING_ATTACK[x] & (~whitePieces);
 		while (kingAttack) {
 			Move move;
 			int y = highbit(kingAttack);
 			kingAttack ^= ((ull) 1 << (ull) y);
 			int att = board.getPiece(y);
-			if (att != EMPTY && att <= 8) continue;
 			move.setFrom(x);
 			move.setTo(y);
 			move.setPiece(WHITE_KING);
@@ -117,16 +117,16 @@ void Generator::displayWhiteKingMoves() {
 
 void Generator::generateBlackKingMoves() {
 	ull blackKing = board.getBlackKing();
+	ull blackPieces = board.getBlackPieces();
 	while (blackKing) {
 		int x = highbit(blackKing);
 		blackKing ^= ((ull) 1 << x);
-		ull kingAttack = KING_ATTACK[x];
+		ull kingAttack = KING_ATTACK[x] & (~blackPieces);
 		while (kingAttack) {
 			Move move;
 			int y = highbit(kingAttack);
 			kingAttack ^= ((ull) 1 << (ull) y);
 			int att = board.getPiece(y);
-			if (att != EMPTY && att >= 8) continue;
 			move.setFrom(x);
 			move.setTo(y);
 			move.setPiece(BLACK_KING);
@@ -283,18 +283,38 @@ void Generator::generateWhiteBishopMoves() {
 	while (whiteBishops) {
 		int x = highbit(whiteBishops);
 		whiteBishops ^= ((ull) 1 << x);
-		ull bishopAttack = (DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & ();
-		while (knightAttack) {
+		ull bishopAttack = (DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (!whitePieces);
+		while (bishopAttack) {
 			Move move;
-			int y = highbit(knightAttack);
-			knightAttack ^= ((ull) 1 << (ull) y);
+			int y = highbit(bishopAttack);
+			bishopAttack ^= ((ull) 1 << (ull) y);
 			int att = board.getPiece(y);
-			if (att != EMPTY && att <= 8) continue;
 			move.setFrom(x);
 			move.setTo(y);
-			move.setPiece(WHITE_KNIGHT);
+			move.setPiece(WHITE_BISHOP);
 			move.setCapture(board.getPiece(y));
-			whiteKnighMoves.push_back(move);
+			whiteBishopMoves.push_back(move);
+		}
+	}
+}
+
+void Generator::generateBlackBishopMoves() {
+	ull blackBishops = board.getWhiteBishops();
+	ull blackPieces = board.getBlackPieces();
+	while (blackBishops) {
+		int x = highbit(blackBishops);
+		blackBishops ^= ((ull) 1 << x);
+		ull bishopAttack = (DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (!blackPieces);
+		while (bishopAttack) {
+			Move move;
+			int y = highbit(bishopAttack);
+			bishopAttack ^= ((ull) 1 << (ull) y);
+			int att = board.getPiece(y);
+			move.setFrom(x);
+			move.setTo(y);
+			move.setPiece(BLACK_BISHOP);
+			move.setCapture(board.getPiece(y));
+			blackBishopMoves.push_back(move);
 		}
 	}
 }
