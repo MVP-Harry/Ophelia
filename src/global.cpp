@@ -247,7 +247,7 @@ void genA8H1Attack() {
 				if ((attack >> bit) & 1) {
 					int newSquare;
 					if (7 - row >= col) newSquare = (7 - bit) * 8 + bit - 8 * (7 - row - col);
-					else newSquare = (7 - row) * 8 + col + (col - 7 + row);
+					else newSquare = (7 - bit) * 8 + bit + (col - 7 + row);
 					DIAG_A8H1_ATTACK[square][occ] |= ((ull) 1 << newSquare);
 				}
 			}

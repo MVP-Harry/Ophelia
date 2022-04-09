@@ -11,7 +11,7 @@ int main() {
 	Board board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
 	init();
 	Generator gen(board);
-	bitdisplay(gen.genDiagA8H1State(D3));
-	bitdisplay(DIAG_A8H1_ATTACK[D3][gen.genDiagA8H1State(D3)]);
+	gen.generateBlackBishopMoves();
+	gen.displayBlackBishopMoves();
 	return 0;
 }

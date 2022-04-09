@@ -283,7 +283,8 @@ void Generator::generateWhiteBishopMoves() {
 	while (whiteBishops) {
 		int x = highbit(whiteBishops);
 		whiteBishops ^= ((ull) 1 << x);
-		ull bishopAttack = (DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (!whitePieces);
+		ull bishopAttack = (DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (~whitePieces);
+		bitdisplay(bishopAttack);
 		while (bishopAttack) {
 			Move move;
 			int y = highbit(bishopAttack);
@@ -299,12 +300,12 @@ void Generator::generateWhiteBishopMoves() {
 }
 
 void Generator::generateBlackBishopMoves() {
-	ull blackBishops = board.getWhiteBishops();
+	ull blackBishops = board.getBlackBishops();
 	ull blackPieces = board.getBlackPieces();
 	while (blackBishops) {
 		int x = highbit(blackBishops);
 		blackBishops ^= ((ull) 1 << x);
-		ull bishopAttack = (DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (!blackPieces);
+		ull bishopAttack = (DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (~blackPieces);
 		while (bishopAttack) {
 			Move move;
 			int y = highbit(bishopAttack);
@@ -320,12 +321,12 @@ void Generator::generateBlackBishopMoves() {
 }
 
 void Generator::generateWhiteRookMoves() {
-	ull whiteRooks = board.getWhiteBishops();
+	ull whiteRooks = board.getWhiteRooks();
 	ull whitePieces = board.getWhitePieces();
 	while (whiteRooks) {
 		int x = highbit(whiteRooks);
 		whiteRooks ^= ((ull) 1 << x);
-		ull rookAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)]) & (!whitePieces);
+		ull rookAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)]) & (~whitePieces);
 		while (rookAttacks) {
 			Move move;
 			int y = highbit(rookAttacks);
@@ -341,12 +342,12 @@ void Generator::generateWhiteRookMoves() {
 }
 
 void Generator::generateBlackRookMoves() {
-	ull blackRooks = board.getWhiteBishops();
+	ull blackRooks = board.getBlackRooks();
 	ull blackPieces = board.getBlackPieces();
 	while (blackRooks) {
 		int x = highbit(blackRooks);
 		blackRooks ^= ((ull) 1 << x);
-		ull rookAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)]) & (!blackPieces);
+		ull rookAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)]) & (~blackPieces);
 		while (rookAttacks) {
 			Move move;
 			int y = highbit(rookAttacks);
@@ -362,12 +363,12 @@ void Generator::generateBlackRookMoves() {
 }
 
 void Generator::generateWhiteQueenMoves() {
-	ull whiteQuenns = board.getWhiteBishops();
+	ull whiteQuenns = board.getWhiteQueens();
 	ull whitePieces = board.getWhitePieces();
 	while (whiteQuenns) {
 		int x = highbit(whiteQuenns);
 		whiteQuenns ^= ((ull) 1 << x);
-		ull queenAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)] | DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (!whitePieces);
+		ull queenAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)] | DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (~whitePieces);
 		while (queenAttacks) {
 			Move move;
 			int y = highbit(queenAttacks);
@@ -383,12 +384,12 @@ void Generator::generateWhiteQueenMoves() {
 }
 
 void Generator::generateBlackQueenMoves() {
-	ull blackQueens = board.getWhiteBishops();
+	ull blackQueens = board.getBlackQueens();
 	ull blackPieces = board.getBlackPieces();
 	while (blackQueens) {
 		int x = highbit(blackQueens);
 		blackQueens ^= ((ull) 1 << x);
-		ull queenAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)] | DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (!blackPieces);
+		ull queenAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)] | DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (~blackPieces);
 		while (queenAttacks) {
 			Move move;
 			int y = highbit(queenAttacks);
@@ -400,5 +401,49 @@ void Generator::generateBlackQueenMoves() {
 			move.setCapture(board.getPiece(y));
 			blackQueenMoves.push_back(move);
 		}
+	}
+}
+
+
+void Generator::displayWhiteBishopMoves() {
+	for (auto m : whiteBishopMoves) {
+		m.display();
+		std::cout << std::endl;
+	}
+
+}
+
+void Generator::displayBlackBishopMoves() {
+	for (auto m : blackBishopMoves) {
+		m.display();
+		std::cout << std::endl;
+	}
+}
+
+void Generator::displayWhiteRookMoves() {
+	for (auto m : whiteRookMoves) {
+		m.display();
+		std::cout << std::endl;
+	}
+}
+
+void Generator::displayBlackRookMoves() {
+	for (auto m : blackRookMoves) {
+		m.display();
+		std::cout << std::endl;
+	}
+}
+
+void Generator::displayWhiteQueenMoves() {
+	for (auto m : whiteQueenMoves) {
+		m.display();
+		std::cout << std::endl;
+	}
+}
+
+void Generator::displayBlackQueenMoves() {
+	for (auto m : blackQueenMoves) {
+		m.display();
+		std::cout << std::endl;
 	}
 }

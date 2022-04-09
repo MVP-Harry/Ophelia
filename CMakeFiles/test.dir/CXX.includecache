@@ -18,18 +18,6 @@ generator.h
 bitset
 -
 
-/home/harry/CS/Ophelia/src/main.cpp
-generator.h
-/home/harry/CS/Ophelia/src/generator.h
-global.h
--
-iostream
--
-move.h
--
-fstream
--
-
 include/board.h
 iostream
 -

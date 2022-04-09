@@ -64,6 +64,18 @@ class Generator {
 
 	void generateBlackQueenMoves();
 
+	void displayWhiteBishopMoves();
+
+	void displayBlackBishopMoves();
+
+	void displayWhiteRookMoves();
+
+	void displayBlackRookMoves();
+
+	void displayWhiteQueenMoves();
+
+	void displayBlackQueenMoves();
+
 	int genRankState(int x);
 
 	int genFileState(int x);
