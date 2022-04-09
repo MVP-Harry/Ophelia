@@ -276,3 +276,25 @@ int Generator::genDiagA8H1State(int x) {
 	ull target = board.getOccupiedSquares();
 	return ((target & DIAG_A8H1_MASK[x]) * MAGIC_DIAG_A8H1[RANKS[x] + FILES[x] - 2]) >> 57;
 }
+
+void Generator::generateWhiteBishopMoves() {
+	ull whiteBishops = board.getWhiteBishops();
+	ull whitePieces = board.getWhitePieces();
+	while (whiteBishops) {
+		int x = highbit(whiteBishops);
+		whiteBishops ^= ((ull) 1 << x);
+		ull bishopAttack = (DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & ();
+		while (knightAttack) {
+			Move move;
+			int y = highbit(knightAttack);
+			knightAttack ^= ((ull) 1 << (ull) y);
+			int att = board.getPiece(y);
+			if (att != EMPTY && att <= 8) continue;
+			move.setFrom(x);
+			move.setTo(y);
+			move.setPiece(WHITE_KNIGHT);
+			move.setCapture(board.getPiece(y));
+			whiteKnighMoves.push_back(move);
+		}
+	}
+}

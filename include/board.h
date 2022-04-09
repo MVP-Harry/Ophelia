@@ -59,6 +59,22 @@ class Board {
 
 	ull getBlackPawns();
 
+	ull getWhiteBishops();
+
+	ull getWhiteRooks();
+
+	ull getWhiteQueens();
+
+	ull getBlackBishops();
+
+	ull getBlackRooks();
+
+	ull getBlackQueens();
+
+	ull getWhitePieces();
+
+	ull getBlackPieces();
+
 	int getEnPassant();
 
 	int getPiece(int num);

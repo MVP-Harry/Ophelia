@@ -239,6 +239,38 @@ ull Board::getBlackPawns() {
 	return blackPawns;
 }
 
+ull Board::getWhiteBishops() {
+	return whiteBishops;
+}
+
+ull Board::getWhiteRooks() {
+	return whiteRooks;
+}
+
+ull Board::getWhiteQueens() {
+	return whiteQueen;
+}
+
+ull Board::getBlackBishops() {
+	return blackBishops;
+}
+
+ull Board::getBlackRooks() {
+	return blackRooks;
+}
+
+ull Board::getBlackQueens() {
+	return blackQueen;
+}
+
+ull Board::getWhitePieces() {
+	return whitePieces;
+}
+
+ull Board::getBlackPieces() {
+	return blackPieces;
+}
+
 int Board::getPiece(int num) {
 	int r = num / 8;
 	int c = num % 8;
