@@ -318,3 +318,87 @@ void Generator::generateBlackBishopMoves() {
 		}
 	}
 }
+
+void Generator::generateWhiteRookMoves() {
+	ull whiteRooks = board.getWhiteBishops();
+	ull whitePieces = board.getWhitePieces();
+	while (whiteRooks) {
+		int x = highbit(whiteRooks);
+		whiteRooks ^= ((ull) 1 << x);
+		ull rookAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)]) & (!whitePieces);
+		while (rookAttacks) {
+			Move move;
+			int y = highbit(rookAttacks);
+			rookAttacks ^= ((ull) 1 << (ull) y);
+			int att = board.getPiece(y);
+			move.setFrom(x);
+			move.setTo(y);
+			move.setPiece(WHITE_ROOK);
+			move.setCapture(board.getPiece(y));
+			whiteRookMoves.push_back(move);
+		}
+	}
+}
+
+void Generator::generateBlackRookMoves() {
+	ull blackRooks = board.getWhiteBishops();
+	ull blackPieces = board.getBlackPieces();
+	while (blackRooks) {
+		int x = highbit(blackRooks);
+		blackRooks ^= ((ull) 1 << x);
+		ull rookAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)]) & (!blackPieces);
+		while (rookAttacks) {
+			Move move;
+			int y = highbit(rookAttacks);
+			rookAttacks ^= ((ull) 1 << (ull) y);
+			int att = board.getPiece(y);
+			move.setFrom(x);
+			move.setTo(y);
+			move.setPiece(BLACK_ROOK);
+			move.setCapture(board.getPiece(y));
+			blackRookMoves.push_back(move);
+		}
+	}
+}
+
+void Generator::generateWhiteQueenMoves() {
+	ull whiteQuenns = board.getWhiteBishops();
+	ull whitePieces = board.getWhitePieces();
+	while (whiteQuenns) {
+		int x = highbit(whiteQuenns);
+		whiteQuenns ^= ((ull) 1 << x);
+		ull queenAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)] | DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (!whitePieces);
+		while (queenAttacks) {
+			Move move;
+			int y = highbit(queenAttacks);
+			queenAttacks ^= ((ull) 1 << (ull) y);
+			int att = board.getPiece(y);
+			move.setFrom(x);
+			move.setTo(y);
+			move.setPiece(WHITE_QUEEN);
+			move.setCapture(board.getPiece(y));
+			whiteQueenMoves.push_back(move);
+		}
+	}
+}
+
+void Generator::generateBlackQueenMoves() {
+	ull blackQueens = board.getWhiteBishops();
+	ull blackPieces = board.getBlackPieces();
+	while (blackQueens) {
+		int x = highbit(blackQueens);
+		blackQueens ^= ((ull) 1 << x);
+		ull queenAttacks = (RANK_ATTACK[x][genRankState(x)] | FILE_ATTACK[x][genFileState(x)] | DIAG_A1H8_ATTACK[x][genDiagA1H8State(x)] | DIAG_A8H1_ATTACK[x][genDiagA8H1State(x)]) & (!blackPieces);
+		while (queenAttacks) {
+			Move move;
+			int y = highbit(queenAttacks);
+			queenAttacks ^= ((ull) 1 << (ull) y);
+			int att = board.getPiece(y);
+			move.setFrom(x);
+			move.setTo(y);
+			move.setPiece(BLACK_QUEEN);
+			move.setCapture(board.getPiece(y));
+			blackQueenMoves.push_back(move);
+		}
+	}
+}
