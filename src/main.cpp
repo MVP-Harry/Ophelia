@@ -11,7 +11,7 @@ int main() {
 	Board board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
 	init();
 	Generator gen(board);
-	gen.generateBlackBishopMoves();
-	gen.displayBlackBishopMoves();
+	gen.generateBlackQueenMoves();
+	gen.displayBlackQueenMoves();
 	return 0;
 }
