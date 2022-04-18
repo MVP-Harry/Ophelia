@@ -455,3 +455,64 @@ void generateAllBlackMoves(int& index) {
 	generateBlackQueenMoves(index);
 	generateBlackPawnMoves(index);
 }
+
+int generateMoves(int& index) {
+	if (board.getTurn()) {
+		generateAllWhiteMoves(index);
+		return index;
+	} else {
+		generateAllBlackMoves(index);
+		return index;
+	}
+}
+
+bool isAttacked(ull target, bool side) {
+	if (side) {
+		// white's perspective, test if a black piece can reach target
+		while (target) {
+			int to = highbit(target);
+			target ^= ((ull) 1 << (ull) to);
+
+			if (board.getBlackPawns() & WHITE_PAWN_DIAGONAL_ATTACK[to]) return true;
+			if (board.getBlackKnights() & KNIGHT_ATTACK[to]) return true;
+			if (board.getBlackKing() & KING_ATTACK[to]) return true;
+
+			ull slidingAttackers = board.getBlackQueens() | board.getBlackRooks();
+			if (slidingAttackers) {
+				if (RANK_ATTACK[to][genRankState(to)] & slidingAttackers) return true;
+				if (FILE_ATTACK[to][genFileState(to)] & slidingAttackers) return true;
+			}
+
+			slidingAttackers = board.getBlackQueens() & board.getBlackBishops();
+			if (slidingAttackers) {
+				if (DIAG_A1H8_ATTACK[to][genDiagA1H8State(to)] & slidingAttackers) return true;
+				if (DIAG_A8H1_ATTACK[to][genDiagA8H1State(to)] & slidingAttackers) return true;
+			}
+
+		}
+	} else {
+		// black's perspective, test if a white piece can reach target
+		while (target) {
+			int to = highbit(target);
+			target ^= ((ull) 1 << (ull) to);
+
+			if (board.getWhitePawns() & BLACK_PAWN_DIAGONAL_ATTACK[to]) return true;
+			if (board.getWhiteKnights() & KNIGHT_ATTACK[to]) return true;
+			if (board.getWhiteKing() & KING_ATTACK[to]) return true;
+
+			ull slidingAttackers = board.getWhiteQueens() | board.getWhiteRooks();
+			if (slidingAttackers) {
+				if (RANK_ATTACK[to][genRankState(to)] & slidingAttackers) return true;
+				if (FILE_ATTACK[to][genFileState(to)] & slidingAttackers) return true;
+			}
+
+			slidingAttackers = board.getWhiteQueens() & board.getWhiteBishops();
+			if (slidingAttackers) {
+				if (DIAG_A1H8_ATTACK[to][genDiagA1H8State(to)] & slidingAttackers) return true;
+				if (DIAG_A8H1_ATTACK[to][genDiagA8H1State(to)] & slidingAttackers) return true;
+			}
+		}
+
+	}
+	return false;
+}

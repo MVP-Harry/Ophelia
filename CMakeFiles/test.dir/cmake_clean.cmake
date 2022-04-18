@@ -3,7 +3,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/generator.cpp.o"
   "CMakeFiles/test.dir/src/global.cpp.o"
   "CMakeFiles/test.dir/src/main.cpp.o"
+  "CMakeFiles/test.dir/src/makemove.cpp.o"
   "CMakeFiles/test.dir/src/move.cpp.o"
+  "CMakeFiles/test.dir/src/perft.cpp.o"
   "test"
   "test.pdb"
 )

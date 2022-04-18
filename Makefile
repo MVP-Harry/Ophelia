@@ -231,6 +231,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/makemove.o: src/makemove.cpp.o
+
+.PHONY : src/makemove.o
+
+# target to build an object file
+src/makemove.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/makemove.cpp.o
+.PHONY : src/makemove.cpp.o
+
+src/makemove.i: src/makemove.cpp.i
+
+.PHONY : src/makemove.i
+
+# target to preprocess a source file
+src/makemove.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/makemove.cpp.i
+.PHONY : src/makemove.cpp.i
+
+src/makemove.s: src/makemove.cpp.s
+
+.PHONY : src/makemove.s
+
+# target to generate assembly for a file
+src/makemove.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/makemove.cpp.s
+.PHONY : src/makemove.cpp.s
+
 src/move.o: src/move.cpp.o
 
 .PHONY : src/move.o
@@ -258,6 +285,33 @@ src/move.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/move.cpp.s
 .PHONY : src/move.cpp.s
 
+src/perft.o: src/perft.cpp.o
+
+.PHONY : src/perft.o
+
+# target to build an object file
+src/perft.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/perft.cpp.o
+.PHONY : src/perft.cpp.o
+
+src/perft.i: src/perft.cpp.i
+
+.PHONY : src/perft.i
+
+# target to preprocess a source file
+src/perft.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/perft.cpp.i
+.PHONY : src/perft.cpp.i
+
+src/perft.s: src/perft.cpp.s
+
+.PHONY : src/perft.s
+
+# target to generate assembly for a file
+src/perft.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/perft.cpp.s
+.PHONY : src/perft.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -279,9 +333,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/makemove.o"
+	@echo "... src/makemove.i"
+	@echo "... src/makemove.s"
 	@echo "... src/move.o"
 	@echo "... src/move.i"
 	@echo "... src/move.s"
+	@echo "... src/perft.o"
+	@echo "... src/perft.i"
+	@echo "... src/perft.s"
 .PHONY : help
 
 

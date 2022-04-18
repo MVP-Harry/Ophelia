@@ -23,11 +23,26 @@ CMakeFiles/test.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/test.dir/src/main.cpp.o: include/board.h
 CMakeFiles/test.dir/src/main.cpp.o: include/global.h
 CMakeFiles/test.dir/src/main.cpp.o: include/globaldef.h
+CMakeFiles/test.dir/src/main.cpp.o: include/makemove.h
 CMakeFiles/test.dir/src/main.cpp.o: include/move.h
+CMakeFiles/test.dir/src/main.cpp.o: include/perft.h
+
+CMakeFiles/test.dir/src/makemove.cpp.o: src/makemove.cpp
+CMakeFiles/test.dir/src/makemove.cpp.o: include/makemove.h
+CMakeFiles/test.dir/src/makemove.cpp.o: include/move.h
 
 CMakeFiles/test.dir/src/move.cpp.o: src/move.cpp
 CMakeFiles/test.dir/src/move.cpp.o: include/board.h
 CMakeFiles/test.dir/src/move.cpp.o: include/global.h
 CMakeFiles/test.dir/src/move.cpp.o: include/globaldef.h
 CMakeFiles/test.dir/src/move.cpp.o: include/move.h
+
+CMakeFiles/test.dir/src/perft.cpp.o: src/perft.cpp
+CMakeFiles/test.dir/src/perft.cpp.o: include/board.h
+CMakeFiles/test.dir/src/perft.cpp.o: include/generator.h
+CMakeFiles/test.dir/src/perft.cpp.o: include/global.h
+CMakeFiles/test.dir/src/perft.cpp.o: include/globaldef.h
+CMakeFiles/test.dir/src/perft.cpp.o: include/makemove.h
+CMakeFiles/test.dir/src/perft.cpp.o: include/move.h
+CMakeFiles/test.dir/src/perft.cpp.o: include/perft.h
 

@@ -23,5 +23,15 @@
   "directory": "/home/harry/CS/Ophelia",
   "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/main.cpp.o -c /home/harry/CS/Ophelia/src/main.cpp",
   "file": "/home/harry/CS/Ophelia/src/main.cpp"
+},
+{
+  "directory": "/home/harry/CS/Ophelia",
+  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/perft.cpp.o -c /home/harry/CS/Ophelia/src/perft.cpp",
+  "file": "/home/harry/CS/Ophelia/src/perft.cpp"
+},
+{
+  "directory": "/home/harry/CS/Ophelia",
+  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/makemove.cpp.o -c /home/harry/CS/Ophelia/src/makemove.cpp",
+  "file": "/home/harry/CS/Ophelia/src/makemove.cpp"
 }
 ]

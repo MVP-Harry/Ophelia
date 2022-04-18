@@ -5,41 +5,41 @@
 #include <board.h>
 #include <move.h>
 
-void generateWhiteKnightMoves(); 
+void generateWhiteKnightMoves(int& index); 
 
 void displayWhiteKnightMoves();
 
-void generateBlackKnightMoves();
+void generateBlackKnightMoves(int& index);
 
 void displayBlackKnightMoves();
 
-void generateWhiteKingMoves();
+void generateWhiteKingMoves(int& index);
 
 void displayWhiteKingMoves();
 
-void generateBlackKingMoves();
+void generateBlackKingMoves(int& index);
 
 void displayBlackKingMoves();
 
-void generateWhitePawnMoves();
+void generateWhitePawnMoves(int& index);
 
-void generateBlackPawnMoves();
+void generateBlackPawnMoves(int& index);
 
 void displayWhitePawnMoves();
 
 void displayBlackPawnMoves();
 
-void generateWhiteBishopMoves();
+void generateWhiteBishopMoves(int& index);
 
-void generateBlackBishopMoves();
+void generateBlackBishopMoves(int& index);
 
-void generateWhiteRookMoves();
+void generateWhiteRookMoves(int& index);
 
-void generateBlackRookMoves();
+void generateBlackRookMoves(int& index);
 
-void generateWhiteQueenMoves();
+void generateWhiteQueenMoves(int& index);
 
-void generateBlackQueenMoves();
+void generateBlackQueenMoves(int& index);
 
 void displayWhiteBishopMoves();
 
@@ -53,11 +53,11 @@ void displayWhiteQueenMoves();
 
 void displayBlackQueenMoves();
 
-void generateAllWhiteMoves();
+void generateAllWhiteMoves(int& index);
 
 void displayAllWhiteMoves();
 
-void generateAllBlackMoves();
+void generateAllBlackMoves(int& index);
 
 void displayAllBlackMoves();
 
@@ -68,5 +68,9 @@ int genFileState(int x);
 int genDiagA1H8State(int x);
 
 int genDiagA8H1State(int x);
+
+int generateMoves(int &index); 
+
+bool isAttacked(ull target, bool side); 
 
 #endif

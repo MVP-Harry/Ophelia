@@ -27,6 +27,20 @@ board.h
 -
 iostream
 -
+perft.h
+-
+
+/home/harry/CS/Ophelia/src/makemove.cpp
+makemove.h
+/home/harry/CS/Ophelia/src/makemove.h
+
+/home/harry/CS/Ophelia/src/perft.cpp
+generator.h
+/home/harry/CS/Ophelia/src/generator.h
+makemove.h
+/home/harry/CS/Ophelia/src/makemove.h
+perft.h
+-
 
 include/board.h
 iostream
@@ -58,5 +72,15 @@ include/globaldef.h
 string
 -
 
+include/makemove.h
+move.h
+-
+
 include/move.h
+
+include/perft.h
+global.h
+-
+makemove.h
+-
 

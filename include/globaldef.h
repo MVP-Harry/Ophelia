@@ -73,7 +73,7 @@ const int FILES[64] = {
        8, 8, 8, 8, 8, 8, 8, 8
 };
 
-const int MAX_MOVE_BUF = 4096;
+const int MAX_MOVE_BUF = 104876;
 const int MAX_PLY = 64;
 
 // Piece identifiers, 4 bits each.

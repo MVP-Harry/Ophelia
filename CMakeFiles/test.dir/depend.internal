@@ -24,6 +24,12 @@ CMakeFiles/test.dir/src/main.cpp.o
  include/board.h
  include/global.h
  include/globaldef.h
+ include/makemove.h
+ include/move.h
+ include/perft.h
+CMakeFiles/test.dir/src/makemove.cpp.o
+ /home/harry/CS/Ophelia/src/makemove.cpp
+ include/makemove.h
  include/move.h
 CMakeFiles/test.dir/src/move.cpp.o
  /home/harry/CS/Ophelia/src/move.cpp
@@ -31,3 +37,12 @@ CMakeFiles/test.dir/src/move.cpp.o
  include/global.h
  include/globaldef.h
  include/move.h
+CMakeFiles/test.dir/src/perft.cpp.o
+ /home/harry/CS/Ophelia/src/perft.cpp
+ include/board.h
+ include/generator.h
+ include/global.h
+ include/globaldef.h
+ include/makemove.h
+ include/move.h
+ include/perft.h

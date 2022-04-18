@@ -2,14 +2,9 @@
 #include <move.h>
 #include <board.h>
 #include <iostream>
-
-void dummy(int& index) {
-	index += 2;
-}
+#include <perft.h>
 
 int main() {
-	int num = 1;
-	dummy(num);
-	std::cout << num << std::endl;
+	std::cout << "HELLO WORLD!" << std::endl;
 	return 0;
 }
