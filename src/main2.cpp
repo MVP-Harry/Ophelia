@@ -15,3 +15,4 @@ int main() {
 	gen.displayBlackQueenMoves();
 	return 0;
 }
+
