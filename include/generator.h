@@ -2,101 +2,71 @@
 #define GENERATOR_H
 
 #include <vector>
+#include <board.h>
 #include <move.h>
 
-class Generator {
-	Board board;
+void generateWhiteKnightMoves(); 
 
-	std::vector<Move> whiteKnighMoves;
-	std::vector<Move> blackKnightMoves;
-	std::vector<Move> whiteKingMoves;
-	std::vector<Move> blackKingMoves;
-	std::vector<Move> whitePawnMoves;
-	std::vector<Move> blackPawnMoves;
-	std::vector<Move> whiteBishopMoves;
-	std::vector<Move> whiteRookMoves;
-	std::vector<Move> whiteQueenMoves;
-	std::vector<Move> blackBishopMoves;
-	std::vector<Move> blackRookMoves;
-	std::vector<Move> blackQueenMoves;
-	std::vector<Move> allwhiteMoves;
-	std::vector<Move> allBlackMoves;
+void displayWhiteKnightMoves();
 
-	public: 
+void generateBlackKnightMoves();
 
-	Generator(Board b);
+void displayBlackKnightMoves();
 
-	static ull highbit(ull number) {
-		return 63 - __builtin_clzll(number);
-	}
+void generateWhiteKingMoves();
 
-	void generateWhiteKnightMoves(); 
+void displayWhiteKingMoves();
 
-	void displayWhiteKnightMoves();
+void generateBlackKingMoves();
 
-	void generateBlackKnightMoves();
+void displayBlackKingMoves();
 
-	void displayBlackKnightMoves();
+void generateWhitePawnMoves();
 
-	void generateWhiteKingMoves();
+void generateBlackPawnMoves();
 
-	void displayWhiteKingMoves();
+void displayWhitePawnMoves();
 
-	void generateBlackKingMoves();
+void displayBlackPawnMoves();
 
-	void displayBlackKingMoves();
+void generateWhiteBishopMoves();
 
-	void generateWhitePawnMoves();
+void generateBlackBishopMoves();
 
-	void generateBlackPawnMoves();
+void generateWhiteRookMoves();
 
-	void displayWhitePawnMoves();
+void generateBlackRookMoves();
 
-	void displayBlackPawnMoves();
+void generateWhiteQueenMoves();
 
-	void generateWhiteBishopMoves();
+void generateBlackQueenMoves();
 
-	void generateBlackBishopMoves();
+void displayWhiteBishopMoves();
 
-	void generateWhiteRookMoves();
+void displayBlackBishopMoves();
 
-	void generateBlackRookMoves();
+void displayWhiteRookMoves();
 
-	void generateWhiteQueenMoves();
+void displayBlackRookMoves();
 
-	void generateBlackQueenMoves();
+void displayWhiteQueenMoves();
 
-	void displayWhiteBishopMoves();
+void displayBlackQueenMoves();
 
-	void displayBlackBishopMoves();
+void generateAllWhiteMoves();
 
-	void displayWhiteRookMoves();
+void displayAllWhiteMoves();
 
-	void displayBlackRookMoves();
+void generateAllBlackMoves();
 
-	void displayWhiteQueenMoves();
+void displayAllBlackMoves();
 
-	void displayBlackQueenMoves();
+int genRankState(int x);
 
-	void generateAllWhiteMoves();
+int genFileState(int x);
 
-	void displayAllWhiteMoves();
+int genDiagA1H8State(int x);
 
-	void generateAllBlackMoves();
-
-	void displayAllBlackMoves();
-
-	int genRankState(int x);
-
-	int genFileState(int x);
-
-	int genDiagA1H8State(int x);
-
-	int genDiagA8H1State(int x);
-
-	bool isAttacked(ull target, int side);
-	
-	Board getBoard();
-};
+int genDiagA8H1State(int x);
 
 #endif

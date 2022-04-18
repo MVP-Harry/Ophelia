@@ -152,4 +152,5 @@ const ull MAGIC_DIAG_A1H8[15] = {
 0x0,
 0x0,
 };
+
 #endif

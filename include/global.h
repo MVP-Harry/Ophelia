@@ -7,7 +7,6 @@
 
 extern Board board;
 
-
 extern ull WHITE_PAWN_DIAGONAL_ATTACK[64];
 extern ull BLACK_PAWN_DIAGONAL_ATTACK[64];
 extern ull KNIGHT_ATTACK[64];
@@ -47,5 +46,7 @@ int pairToInt(std::pair<int, int> p);
 void bitdisplay(ull x);
 
 bool isSameFile(int x, int y);
+
+ull highbit(ull number);
 
 #endif

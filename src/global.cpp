@@ -277,3 +277,7 @@ void init() {
 	genA1H8Attack();
 	genA8H1Attack();
 }
+
+ull highbit(ull number) {
+	return 63 - __builtin_clzll(number);
+}
