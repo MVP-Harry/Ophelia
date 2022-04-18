@@ -2,8 +2,9 @@
 #define BOARD_H
 
 #include <iostream>
-#include "global.h"
+#include <globaldef.h>
 #include <string>
+#include <move.h>
 
 class Board {
 	// Using bitboard representation
@@ -25,6 +26,11 @@ class Board {
 	void helpInit();
 
 	public:
+
+	Move moveBuf[MAX_MOVE_BUF];
+
+	int moveBufLen[MAX_PLY];
+
 	Board();
 
 	Board(int input[64], bool next, int fiftyM, int castleW, int castleB, int epSq);

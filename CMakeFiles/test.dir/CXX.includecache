@@ -39,15 +39,13 @@ bitset
 -
 
 /home/harry/CS/Ophelia/src/main.cpp
-generator.h
-/home/harry/CS/Ophelia/src/generator.h
 global.h
--
-iostream
 -
 move.h
 -
-fstream
+board.h
+-
+iostream
 -
 
 /home/harry/CS/Ophelia/src/move.cpp
@@ -61,9 +59,11 @@ move.h
 include/board.h
 iostream
 -
-global.h
-include/global.h
+globaldef.h
+-
 string
+-
+move.h
 -
 
 include/generator.h
@@ -75,8 +75,14 @@ move.h
 include/global.h
 string
 -
-
-include/move.h
+globaldef.h
+-
 board.h
 -
+
+include/globaldef.h
+string
+-
+
+include/move.h
 

@@ -4,24 +4,30 @@
 CMakeFiles/test.dir/src/board.cpp.o
  /home/harry/CS/Ophelia/src/board.cpp
  include/board.h
- include/global.h
+ include/globaldef.h
+ include/move.h
 CMakeFiles/test.dir/src/generator.cpp.o
  /home/harry/CS/Ophelia/src/generator.cpp
  include/board.h
  include/generator.h
  include/global.h
+ include/globaldef.h
  include/move.h
 CMakeFiles/test.dir/src/global.cpp.o
  /home/harry/CS/Ophelia/src/global.cpp
+ include/board.h
  include/global.h
+ include/globaldef.h
+ include/move.h
 CMakeFiles/test.dir/src/main.cpp.o
  /home/harry/CS/Ophelia/src/main.cpp
  include/board.h
- include/generator.h
  include/global.h
+ include/globaldef.h
  include/move.h
 CMakeFiles/test.dir/src/move.cpp.o
  /home/harry/CS/Ophelia/src/move.cpp
  include/board.h
  include/global.h
+ include/globaldef.h
  include/move.h

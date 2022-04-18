@@ -19,6 +19,7 @@ ull RANK_ATTACK[64][64];
 ull FILE_ATTACK[64][64];
 ull DIAG_A1H8_ATTACK[64][64];
 ull DIAG_A8H1_ATTACK[64][64];
+Board board;
 
 std::pair<int, int> intToPair(int num) {
 	int r = 7 - num / 8;

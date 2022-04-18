@@ -3,25 +3,31 @@
 
 CMakeFiles/test.dir/src/board.cpp.o: src/board.cpp
 CMakeFiles/test.dir/src/board.cpp.o: include/board.h
-CMakeFiles/test.dir/src/board.cpp.o: include/global.h
+CMakeFiles/test.dir/src/board.cpp.o: include/globaldef.h
+CMakeFiles/test.dir/src/board.cpp.o: include/move.h
 
 CMakeFiles/test.dir/src/generator.cpp.o: src/generator.cpp
 CMakeFiles/test.dir/src/generator.cpp.o: include/board.h
 CMakeFiles/test.dir/src/generator.cpp.o: include/generator.h
 CMakeFiles/test.dir/src/generator.cpp.o: include/global.h
+CMakeFiles/test.dir/src/generator.cpp.o: include/globaldef.h
 CMakeFiles/test.dir/src/generator.cpp.o: include/move.h
 
 CMakeFiles/test.dir/src/global.cpp.o: src/global.cpp
+CMakeFiles/test.dir/src/global.cpp.o: include/board.h
 CMakeFiles/test.dir/src/global.cpp.o: include/global.h
+CMakeFiles/test.dir/src/global.cpp.o: include/globaldef.h
+CMakeFiles/test.dir/src/global.cpp.o: include/move.h
 
 CMakeFiles/test.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/test.dir/src/main.cpp.o: include/board.h
-CMakeFiles/test.dir/src/main.cpp.o: include/generator.h
 CMakeFiles/test.dir/src/main.cpp.o: include/global.h
+CMakeFiles/test.dir/src/main.cpp.o: include/globaldef.h
 CMakeFiles/test.dir/src/main.cpp.o: include/move.h
 
 CMakeFiles/test.dir/src/move.cpp.o: src/move.cpp
 CMakeFiles/test.dir/src/move.cpp.o: include/board.h
 CMakeFiles/test.dir/src/move.cpp.o: include/global.h
+CMakeFiles/test.dir/src/move.cpp.o: include/globaldef.h
 CMakeFiles/test.dir/src/move.cpp.o: include/move.h
 
