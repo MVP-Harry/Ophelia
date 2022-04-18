@@ -447,3 +447,21 @@ void Generator::displayBlackQueenMoves() {
 		std::cout << std::endl;
 	}
 }
+
+void Generator::generateAllWhiteMoves() {
+	generateWhiteBishopMoves();
+	generateWhiteKingMoves();
+	generateWhitePawnMoves();
+	generateWhiteKnightMoves();
+	generateWhiteQueenMoves();
+	generateWhiteRookMoves();
+}
+
+void Generator::generateAllBlackMoves() {
+	generateBlackBishopMoves();
+	generateBlackKingMoves();
+	generateBlackKnightMoves();
+	generateBlackRookMoves();
+	generateBlackQueenMoves();
+	generateBlackPawnMoves();
+}

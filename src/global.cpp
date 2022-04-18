@@ -7,7 +7,9 @@
 ull KNIGHT_ATTACK[64];
 ull KING_ATTACK[64];
 ull WHITE_PAWN_ATTACK[64];
+ull WHITE_PAWN_DIAGONAL_ATTACK[64];
 ull BLACK_PAWN_ATTACK[64];
+ull BLACK_PAWN_DIAGONAL_ATTACK[64];
 ull RANK_MASK[64];
 ull FILE_MASK[64];
 ull DIAG_A1H8_MASK[64];
@@ -78,6 +80,8 @@ void genPawns() {
 	for (int i = 0; i < 64; i++) {
 		ull val = 0;
 		ull val2 = 0;
+		ull weird_val1 = 0;
+		ull weird_val2 = 0;
 		std::pair<int, int> coordinates = intToPair(i);
 		int dx[3] = {-1, -1, -1};
 		int dx2[3] = {1, 1, 1};
@@ -89,10 +93,12 @@ void genPawns() {
 			if (nx >= 0 && nx <= 7 && ny >= 0 && ny <= 7) {
 				int xxx = pairToInt(std::make_pair(nx, ny));
 				val |= ((ull) 1 << (ull) xxx);
+				if (j == 0 || j == 2) weird_val1 |= ((ull) 1 << (ull) xxx);
 			}
 			if (nx2 >= 0 && nx2 <= 7 && ny >= 0 && ny <= 7) {
 				int xxx = pairToInt(std::make_pair(nx2, ny));
 				val2 |= ((ull) 1 << (ull) xxx);
+				if (j == 0 || j == 2) weird_val2 |= ((ull) 1 << (ull) xxx);
 			}
 		}
 
@@ -104,7 +110,9 @@ void genPawns() {
 		}
 
 		WHITE_PAWN_ATTACK[i] = val;
+		WHITE_PAWN_DIAGONAL_ATTACK[i] = weird_val1;
 		BLACK_PAWN_ATTACK[i] = val2;
+		BLACK_PAWN_DIAGONAL_ATTACK[i] = weird_val2;
 	}
 }
 

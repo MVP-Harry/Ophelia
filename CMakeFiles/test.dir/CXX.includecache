@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/harry/CS/Ophelia/src/board.cpp
+board.h
+/home/harry/CS/Ophelia/src/board.h
+bitset
+-
+iostream
+-
+
 /home/harry/CS/Ophelia/src/generator.cpp
 global.h
 -
@@ -14,6 +22,18 @@ fstream
 iostream
 -
 generator.h
+-
+bitset
+-
+
+/home/harry/CS/Ophelia/src/global.cpp
+stdio.h
+-
+string.h
+-
+global.h
+-
+iostream
 -
 bitset
 -
@@ -28,6 +48,14 @@ iostream
 move.h
 -
 fstream
+-
+
+/home/harry/CS/Ophelia/src/move.cpp
+global.h
+/home/harry/CS/Ophelia/src/global.h
+iostream
+-
+move.h
 -
 
 include/board.h

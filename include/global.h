@@ -150,6 +150,8 @@ const ull MAGIC_DIAG_A1H8[15] = {
 0x0,
 };
 
+extern ull WHITE_PAWN_DIAGONAL_ATTACK[64];
+extern ull BLACK_PAWN_DIAGONAL_ATTACK[64];
 extern ull KNIGHT_ATTACK[64];
 extern ull KING_ATTACK[64];
 extern ull WHITE_PAWN_ATTACK[64];

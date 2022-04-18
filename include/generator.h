@@ -19,6 +19,8 @@ class Generator {
 	std::vector<Move> blackBishopMoves;
 	std::vector<Move> blackRookMoves;
 	std::vector<Move> blackQueenMoves;
+	std::vector<Move> allwhiteMoves;
+	std::vector<Move> allBlackMoves;
 
 	public: 
 
@@ -76,6 +78,14 @@ class Generator {
 
 	void displayBlackQueenMoves();
 
+	void generateAllWhiteMoves();
+
+	void displayAllWhiteMoves();
+
+	void generateAllBlackMoves();
+
+	void displayAllBlackMoves();
+
 	int genRankState(int x);
 
 	int genFileState(int x);
@@ -84,6 +94,8 @@ class Generator {
 
 	int genDiagA8H1State(int x);
 
+	bool isAttacked(ull target, int side);
+	
 	Board getBoard();
 };
 
