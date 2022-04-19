@@ -466,6 +466,42 @@ int generateMoves(int& index) {
 	}
 }
 
+bool isKingAttacked(Move curMove) {
+	// returns whether King is going to be attacked after making curMove
+	ull target = 0;
+	bool side = board.getTurn();	
+	if (side) {
+		if (curMove.isCastle()) {
+			if (curMove.isCastleOO()) {
+				target |= ((ull) 1 << (ull) E1);
+				target |= ((ull) 1 << (ull) F1);
+				target |= ((ull) 1 << (ull) G1);
+			} else {
+				target |= ((ull) 1 << (ull) E1);
+				target |= ((ull) 1 << (ull) D1);
+				target |= ((ull) 1 << (ull) C1);
+			}
+		} else {
+			target |= ((ull) 1 << (ull) board.getWhiteKing());
+		}
+	} else {
+		if (curMove.isCastle()) {
+			if (curMove.isCastleOO()) {
+				target |= ((ull) 1 << (ull) E8);
+				target |= ((ull) 1 << (ull) F8);
+				target |= ((ull) 1 << (ull) G8);
+			} else {
+				target |= ((ull) 1 << (ull) E8);
+				target |= ((ull) 1 << (ull) D8);
+				target |= ((ull) 1 << (ull) C8);
+			}
+		} else {
+			target |= ((ull) 1 << (ull) board.getBlackKing());
+		}
+	}
+	return isAttacked(target, side);
+}
+
 bool isAttacked(ull target, bool side) {
 	if (side) {
 		// white's perspective, test if a black piece can reach target

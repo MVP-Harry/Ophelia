@@ -6,19 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/harry/CS/Ophelia/src/generator.cpp
-global.h
--
+/home/harry/CS/Ophelia/src/main.cpp
 fstream
 -
-iostream
--
-generator.h
--
-bitset
--
-
-/home/harry/CS/Ophelia/src/main.cpp
 global.h
 -
 move.h
@@ -27,18 +17,8 @@ board.h
 -
 iostream
 -
-perft.h
--
-
-/home/harry/CS/Ophelia/src/makemove.cpp
-makemove.h
-/home/harry/CS/Ophelia/src/makemove.h
-
-/home/harry/CS/Ophelia/src/perft.cpp
 generator.h
-/home/harry/CS/Ophelia/src/generator.h
-makemove.h
-/home/harry/CS/Ophelia/src/makemove.h
+-
 perft.h
 -
 

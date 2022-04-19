@@ -71,6 +71,8 @@ int genDiagA8H1State(int x);
 
 int generateMoves(int &index); 
 
+bool isKingAttacked(Move curMove);
+
 bool isAttacked(ull target, bool side); 
 
 #endif

@@ -10,14 +10,16 @@ ull perft(int ply, int depth) {
 	board.moveBufLen[ply + 1] = generateMoves(board.moveBufLen[ply]);
 
 	for (int i = board.moveBufLen[ply]; i < board.moveBufLen[ply + 1]; i++) {
-		makeMove(board.moveBuf[i]);
+		Move curMove = board.moveBuf[i];
 
-		if (!isKingAttacked()) {
-			// implement isKingAttacked to check legality!
+
+		makeMove(curMove);
+
+		if (!isKingAttacked(curMove)) {
 			count += perft(ply + 1, depth - 1);
 		}
 
-		unmakeMove(board.moveBuf[i]);
+		unmakeMove(curMove);
 	}
 
 	return count;
