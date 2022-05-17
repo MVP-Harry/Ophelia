@@ -1,6 +1,6 @@
 #include "makemove.h"
 
-// makes and unmakes move
+// TODO: implement makes and unmakes move
 
 void makeMove(Move& move) {
 

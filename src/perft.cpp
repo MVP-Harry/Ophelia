@@ -6,6 +6,7 @@ ull perft(int ply, int depth) {
 	// testing
 	if (depth == 0) return 1;
 
+
 	ull count = 0;
 	board.moveBufLen[ply + 1] = generateMoves(board.moveBufLen[ply]);
 
