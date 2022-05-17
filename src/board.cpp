@@ -1,5 +1,4 @@
 #include "board.h"
-#include <bitset>
 #include <iostream>
 
 void Board::helpInit() {

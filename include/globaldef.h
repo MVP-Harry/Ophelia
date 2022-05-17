@@ -2,6 +2,10 @@
 #define GLOBALDEF_H
 
 #include <string>
+#include <iostream>
+
+using std::endl;
+using std::cout;
 
 // Square names
 const int A8 = 56;  const int B8 = 57;  const int C8 = 58;  const int D8 = 59;

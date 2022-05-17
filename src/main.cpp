@@ -12,10 +12,15 @@ int main() {
 	std::string fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove;
 	std::fstream input("input.txt");
 	input >> fen >> fencolor >> fencastling >> fenenpessant >> fenhalfmoveclock >> fenfullmove;
-	std::cout << fen << " " << fencolor << " " << fencastling << " " << fenenpessant << " " << fenhalfmoveclock << " " << fenfullmove << std::endl;
 	init();
 	board = Board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
-	std::cout << isAttacked((ull) 1 << C8, 1) << std::endl;
 
+	Move move;
+	move.setFrom(C7);
+	move.setTo(C6);
+	move.setCapture(WHITE_KNIGHT);
+	move.setPiece(BLACK_KING);
+
+	std::cout << isKingAttacked(move) << std::endl;
 	return 0;
 }

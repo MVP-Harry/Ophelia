@@ -469,7 +469,9 @@ int generateMoves(int& index) {
 bool isKingAttacked(Move curMove) {
 	// returns whether King is going to be attacked after making curMove
 	ull target = 0;
-	bool side = board.getTurn();	
+	// also consider using curMove.isWhite()
+	bool side = curMove.isWhitemove();
+	cout << side << endl;
 	if (side) {
 		if (curMove.isCastle()) {
 			if (curMove.isCastleOO()) {
