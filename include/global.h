@@ -22,6 +22,7 @@ extern ull RANK_ATTACK[64][64];
 extern ull FILE_ATTACK[64][64];
 extern ull DIAG_A1H8_ATTACK[64][64];
 extern ull DIAG_A8H1_ATTACK[64][64];
+extern ull BITSET[64];
 
 void genKnight();
 

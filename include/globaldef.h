@@ -79,6 +79,7 @@ const int FILES[64] = {
 
 const int MAX_MOVE_BUF = 104876;
 const int MAX_PLY = 64;
+const int MAX_GAME_LINE = 200;
 
 // Piece identifiers, 4 bits each.
 // Usefull bitwise properties of this numbering scheme:

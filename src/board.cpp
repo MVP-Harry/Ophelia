@@ -7,7 +7,7 @@ void Board::helpInit() {
 		for (int j = 0; j <= 7; j++) {
 			int id = (7 - i) * 8 + j;
 			ull val = ((ull) 1 << (ull) id);
-			switch (square[i][j]) {
+			switch (square[8 * i + j]) {
 				case WHITE_KING:
 					whiteKing |= val;
 					break;
@@ -53,11 +53,9 @@ Board::Board() {
 	// init new game
 	for (int i = 0; i < 8; i++)
 		for (int j = 0; j < 8; j++)
-			square[i][j] = 0;
+			square[8 * i + j] = 0;
 	for (int i = 0; i < 64; i++) {
-		int col = i % 8;
-		int row = 7 - i / 8;
-		square[row][col] = NEWGAME[i];
+		square[i] = NEWGAME[i];
 	}
 	helpInit();
 	nextMove = true;
@@ -71,13 +69,9 @@ Board::Board() {
 }
 
 Board::Board(int input[64], bool next, int fiftyM, int castleW, int castleB, int epSq) {
-	for (int i = 0; i < 8; i++)
-		for (int j = 0; j < 8; j++)
-			square[i][j] = 0;
+	for (int i = 0; i < 64; i++) square[i] = 0;
 	for (int i = 0; i < 64; i++) {
-		int col = i % 8;
-		int row = 7 - i / 8;
-		square[row][col] = input[i];
+		square[i] = input[i];
 	}
 	helpInit();
 	nextMove = next;
@@ -93,9 +87,7 @@ Board::Board(int input[64], bool next, int fiftyM, int castleW, int castleB, int
 
 Board::Board(std::string fen, std::string fencolor, std::string fencastling, std::string fenenpessant, std::string fenhalfmoveclock, std::string fenfullmove) {
 	// Init square and use helpInit to init bitset
-	for (int i = 0; i < 8; i++)
-		for (int j = 0; j < 8; j++)
-			square[i][j] = 0;
+	for (int i = 0; i < 64; i++) square[i] = 0;
 	int len = fen.length();
 	int row = 0, col = 0;
 	for (int i = 0; i < len; i++) {
@@ -107,40 +99,40 @@ Board::Board(std::string fen, std::string fencolor, std::string fencastling, std
 		} else {
 			switch (fen[i]) {
 				case 'P': 
-					square[row][col] = 1;
+					square[8 * row + col] = 1;
 					break;
 				case 'K': 
-					square[row][col] = 2;
+					square[8 * row + col] = 2;
 					break;
 				case 'N': 
-					square[row][col] = 3;
+					square[8 * row + col] = 3;
 					break;
 				case 'B': 
-					square[row][col] = 5;
+					square[8 * row + col] = 5;
 					break;
 				case 'R': 
-					square[row][col] = 6;
+					square[8 * row + col] = 6;
 					break;
 				case 'Q': 
-					square[row][col] = 7;
+					square[8 * row + col] = 7;
 					break;
 				case 'p': 
-					square[row][col] = 9;
+					square[8 * row + col] = 9;
 					break;
 				case 'k': 
-					square[row][col] = 10;
+					square[8 * row + col] = 10;
 					break;
 				case 'n': 
-					square[row][col] = 11;
+					square[8 * row + col] = 11;
 					break;
 				case 'b': 
-					square[row][col] = 13;
+					square[8 * row + col] = 13;
 					break;
 				case 'r': 
-					square[row][col] = 14;
+					square[8 * row + col] = 14;
 					break;
 				case 'q': 
-					square[row][col] = 15;
+					square[8 * row + col] = 15;
 					break;
 			}
 			col++;
@@ -176,7 +168,7 @@ void Board::display() {
 	if (viewRotated) {
 		for (int i = 7; i >= 0; i--) {
 			for (int j = 0; j <= 7; j++) {
-				std::cout << PIECENAMES[square[i][j]];
+				std::cout << PIECENAMES[square[8 * i + j]];
 			}
 			std::cout << std::endl;
 		}
@@ -184,10 +176,14 @@ void Board::display() {
 	}
 	for (int i = 0; i <= 7; i++) {
 		for (int j = 0; j <= 7; j++) {
-			std::cout << PIECENAMES[square[i][j]];
+			std::cout << PIECENAMES[square[8 * i + j]];
 		}
 		std::cout << std::endl;
 	}
+}
+
+int Board::getFifty() {
+	return fiftyMove;
 }
 
 bool Board::getRotation() {
@@ -271,9 +267,7 @@ ull Board::getBlackPieces() {
 }
 
 int Board::getPiece(int num) {
-	int r = num / 8;
-	int c = num % 8;
-	return square[7 - r][c];
+	return square[num];
 }
 
 int Board::getEnPassant() {

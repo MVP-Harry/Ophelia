@@ -3,11 +3,13 @@
 
 CMakeFiles/test.dir/src/board.cpp.o: src/board.cpp
 CMakeFiles/test.dir/src/board.cpp.o: include/board.h
+CMakeFiles/test.dir/src/board.cpp.o: include/gameline.h
 CMakeFiles/test.dir/src/board.cpp.o: include/globaldef.h
 CMakeFiles/test.dir/src/board.cpp.o: include/move.h
 
 CMakeFiles/test.dir/src/generator.cpp.o: src/generator.cpp
 CMakeFiles/test.dir/src/generator.cpp.o: include/board.h
+CMakeFiles/test.dir/src/generator.cpp.o: include/gameline.h
 CMakeFiles/test.dir/src/generator.cpp.o: include/generator.h
 CMakeFiles/test.dir/src/generator.cpp.o: include/global.h
 CMakeFiles/test.dir/src/generator.cpp.o: include/globaldef.h
@@ -15,12 +17,14 @@ CMakeFiles/test.dir/src/generator.cpp.o: include/move.h
 
 CMakeFiles/test.dir/src/global.cpp.o: src/global.cpp
 CMakeFiles/test.dir/src/global.cpp.o: include/board.h
+CMakeFiles/test.dir/src/global.cpp.o: include/gameline.h
 CMakeFiles/test.dir/src/global.cpp.o: include/global.h
 CMakeFiles/test.dir/src/global.cpp.o: include/globaldef.h
 CMakeFiles/test.dir/src/global.cpp.o: include/move.h
 
 CMakeFiles/test.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/test.dir/src/main.cpp.o: include/board.h
+CMakeFiles/test.dir/src/main.cpp.o: include/gameline.h
 CMakeFiles/test.dir/src/main.cpp.o: include/generator.h
 CMakeFiles/test.dir/src/main.cpp.o: include/global.h
 CMakeFiles/test.dir/src/main.cpp.o: include/globaldef.h
@@ -29,17 +33,23 @@ CMakeFiles/test.dir/src/main.cpp.o: include/move.h
 CMakeFiles/test.dir/src/main.cpp.o: include/perft.h
 
 CMakeFiles/test.dir/src/makemove.cpp.o: src/makemove.cpp
+CMakeFiles/test.dir/src/makemove.cpp.o: include/board.h
+CMakeFiles/test.dir/src/makemove.cpp.o: include/gameline.h
+CMakeFiles/test.dir/src/makemove.cpp.o: include/global.h
+CMakeFiles/test.dir/src/makemove.cpp.o: include/globaldef.h
 CMakeFiles/test.dir/src/makemove.cpp.o: include/makemove.h
 CMakeFiles/test.dir/src/makemove.cpp.o: include/move.h
 
 CMakeFiles/test.dir/src/move.cpp.o: src/move.cpp
 CMakeFiles/test.dir/src/move.cpp.o: include/board.h
+CMakeFiles/test.dir/src/move.cpp.o: include/gameline.h
 CMakeFiles/test.dir/src/move.cpp.o: include/global.h
 CMakeFiles/test.dir/src/move.cpp.o: include/globaldef.h
 CMakeFiles/test.dir/src/move.cpp.o: include/move.h
 
 CMakeFiles/test.dir/src/perft.cpp.o: src/perft.cpp
 CMakeFiles/test.dir/src/perft.cpp.o: include/board.h
+CMakeFiles/test.dir/src/perft.cpp.o: include/gameline.h
 CMakeFiles/test.dir/src/perft.cpp.o: include/generator.h
 CMakeFiles/test.dir/src/perft.cpp.o: include/global.h
 CMakeFiles/test.dir/src/perft.cpp.o: include/globaldef.h

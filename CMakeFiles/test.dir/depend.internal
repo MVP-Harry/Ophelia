@@ -4,11 +4,13 @@
 CMakeFiles/test.dir/src/board.cpp.o
  /home/harry/CS/Ophelia/src/board.cpp
  include/board.h
+ include/gameline.h
  include/globaldef.h
  include/move.h
 CMakeFiles/test.dir/src/generator.cpp.o
  /home/harry/CS/Ophelia/src/generator.cpp
  include/board.h
+ include/gameline.h
  include/generator.h
  include/global.h
  include/globaldef.h
@@ -16,12 +18,14 @@ CMakeFiles/test.dir/src/generator.cpp.o
 CMakeFiles/test.dir/src/global.cpp.o
  /home/harry/CS/Ophelia/src/global.cpp
  include/board.h
+ include/gameline.h
  include/global.h
  include/globaldef.h
  include/move.h
 CMakeFiles/test.dir/src/main.cpp.o
  /home/harry/CS/Ophelia/src/main.cpp
  include/board.h
+ include/gameline.h
  include/generator.h
  include/global.h
  include/globaldef.h
@@ -30,17 +34,23 @@ CMakeFiles/test.dir/src/main.cpp.o
  include/perft.h
 CMakeFiles/test.dir/src/makemove.cpp.o
  /home/harry/CS/Ophelia/src/makemove.cpp
+ include/board.h
+ include/gameline.h
+ include/global.h
+ include/globaldef.h
  include/makemove.h
  include/move.h
 CMakeFiles/test.dir/src/move.cpp.o
  /home/harry/CS/Ophelia/src/move.cpp
  include/board.h
+ include/gameline.h
  include/global.h
  include/globaldef.h
  include/move.h
 CMakeFiles/test.dir/src/perft.cpp.o
  /home/harry/CS/Ophelia/src/perft.cpp
  include/board.h
+ include/gameline.h
  include/generator.h
  include/global.h
  include/globaldef.h

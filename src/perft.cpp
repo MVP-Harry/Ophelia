@@ -13,7 +13,6 @@ ull perft(int ply, int depth) {
 	for (int i = board.moveBufLen[ply]; i < board.moveBufLen[ply + 1]; i++) {
 		Move curMove = board.moveBuf[i];
 
-
 		makeMove(curMove);
 
 		if (!isKingAttacked(curMove)) {

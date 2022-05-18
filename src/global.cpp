@@ -19,6 +19,7 @@ ull RANK_ATTACK[64][64];
 ull FILE_ATTACK[64][64];
 ull DIAG_A1H8_ATTACK[64][64];
 ull DIAG_A8H1_ATTACK[64][64];
+ull BITSET[64];
 Board board;
 
 std::pair<int, int> intToPair(int num) {
@@ -276,6 +277,9 @@ void init() {
 	genFileAttack();
 	genA1H8Attack();
 	genA8H1Attack();
+	for (int i = 0; i < 64; i++) {
+		BITSET[i] = ((ull) 1 << i);
+	}
 }
 
 ull highbit(ull number) {
