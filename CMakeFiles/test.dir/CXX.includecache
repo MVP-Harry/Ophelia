@@ -6,28 +6,20 @@
 
 #IncludeRegexTransform: 
 
-/home/harry/CS/Ophelia/src/main.cpp
-fstream
--
-global.h
--
-move.h
--
-board.h
--
-iostream
--
-generator.h
--
-perft.h
--
-
 /home/harry/CS/Ophelia/src/makemove.cpp
 makemove.h
 /home/harry/CS/Ophelia/src/makemove.h
 board.h
 -
 global.h
+-
+
+/home/harry/CS/Ophelia/src/perft.cpp
+generator.h
+/home/harry/CS/Ophelia/src/generator.h
+makemove.h
+/home/harry/CS/Ophelia/src/makemove.h
+perft.h
 -
 
 include/board.h
