@@ -117,6 +117,7 @@ void makeMove(Move& move) {
 	ull fromBitMap = ((ull) 1 << from);
 	ull fromToBitMap = fromBitMap | ((ull) 1 << to);
 
+	// endofSearch starts from 0
 	board.gameline[board.endofSearch].move = move;
 	board.gameline[board.endofSearch].castleWhite = board.whiteOO() | board.whiteOOO();
 	board.gameline[board.endofSearch].castleBlack = board.blackOO() | board.blackOOO();

@@ -471,7 +471,7 @@ bool isKingAttacked(Move curMove) {
 	ull target = 0;
 	// also consider using curMove.isWhite()
 	bool side = curMove.isWhitemove();
-	cout << side << endl;
+	// cout << side << endl;
 	if (side) {
 		if (curMove.isCastle()) {
 			if (curMove.isCastleOO()) {

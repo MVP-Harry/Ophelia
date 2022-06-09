@@ -15,12 +15,17 @@ int main() {
 	init();
 	board = Board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
 
-	Move move;
-	move.setFrom(C7);
-	move.setTo(C6);
-	move.setCapture(WHITE_KNIGHT);
-	move.setPiece(BLACK_KING);
+	cout << board.nextMove << endl;
+	cout << board.endofSearch << endl;
 
-	std::cout << isKingAttacked(move) << std::endl;
+	Move move;
+	move.setFrom(D2);
+	move.setTo(D4);
+	move.setPiece(WHITE_PAWN);
+
+	makeMove(move);
+
+	cout << board.nextMove << endl;
+	cout << board.endofSearch << endl;
 	return 0;
 }

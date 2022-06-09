@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/harry/CS/Ophelia/src/main.cpp
+fstream
+-
+global.h
+-
+move.h
+-
+board.h
+-
+iostream
+-
+generator.h
+-
+perft.h
+-
+
 /home/harry/CS/Ophelia/src/makemove.cpp
 makemove.h
 /home/harry/CS/Ophelia/src/makemove.h
@@ -30,6 +46,14 @@ include/gameline.h
 move.h
 -
 
+include/generator.h
+vector
+-
+board.h
+-
+move.h
+-
+
 include/global.h
 string
 -
@@ -49,4 +73,10 @@ move.h
 -
 
 include/move.h
+
+include/perft.h
+global.h
+-
+makemove.h
+-
 
