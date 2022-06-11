@@ -137,9 +137,9 @@ void Move::display() {
 	std::cout << "Original Square is: " << SQUARENAME[getFrom()] << std::endl;
 	std::cout << "Target Square is: " << SQUARENAME[getTo()] << std::endl;
 	std::cout << "Piece is: " << PIECENAMES[getPiece()] << std::endl;
-	// std::cout << "Capture is: " << PIECENAMES[getCapture()] << std::endl;
+	std::cout << "Capture is: " << PIECENAMES[getCapture()] << std::endl;
 	std::cout << "Color is: " << (isWhitemove() ? "WHITE" : "BLACK") << std::endl;
-	// std::cout << "Promotion is: " << PIECENAMES[getProm()] << std::endl;
+	std::cout << "Promotion is: " << PIECENAMES[getProm()] << std::endl;
 	std::cout << "Is castle? " << (isCastle() ? "YES" : "NO") << std::endl;
 	std::cout << std::endl;
 }

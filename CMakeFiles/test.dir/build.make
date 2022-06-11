@@ -109,22 +109,9 @@ CMakeFiles/test.dir/src/global.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/global.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harry/CS/Ophelia/src/global.cpp -o CMakeFiles/test.dir/src/global.cpp.s
 
-CMakeFiles/test.dir/src/main.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/main.cpp.o: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harry/CS/Ophelia/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/main.cpp.o -c /home/harry/CS/Ophelia/src/main.cpp
-
-CMakeFiles/test.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harry/CS/Ophelia/src/main.cpp > CMakeFiles/test.dir/src/main.cpp.i
-
-CMakeFiles/test.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harry/CS/Ophelia/src/main.cpp -o CMakeFiles/test.dir/src/main.cpp.s
-
 CMakeFiles/test.dir/src/perft.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/perft.cpp.o: src/perft.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harry/CS/Ophelia/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/perft.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harry/CS/Ophelia/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/perft.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/perft.cpp.o -c /home/harry/CS/Ophelia/src/perft.cpp
 
 CMakeFiles/test.dir/src/perft.cpp.i: cmake_force
@@ -134,6 +121,19 @@ CMakeFiles/test.dir/src/perft.cpp.i: cmake_force
 CMakeFiles/test.dir/src/perft.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/perft.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harry/CS/Ophelia/src/perft.cpp -o CMakeFiles/test.dir/src/perft.cpp.s
+
+CMakeFiles/test.dir/src/main.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/main.cpp.o: src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harry/CS/Ophelia/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/main.cpp.o -c /home/harry/CS/Ophelia/src/main.cpp
+
+CMakeFiles/test.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harry/CS/Ophelia/src/main.cpp > CMakeFiles/test.dir/src/main.cpp.i
+
+CMakeFiles/test.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harry/CS/Ophelia/src/main.cpp -o CMakeFiles/test.dir/src/main.cpp.s
 
 CMakeFiles/test.dir/src/makemove.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/makemove.cpp.o: src/makemove.cpp
@@ -154,8 +154,8 @@ test_OBJECTS = \
 "CMakeFiles/test.dir/src/move.cpp.o" \
 "CMakeFiles/test.dir/src/generator.cpp.o" \
 "CMakeFiles/test.dir/src/global.cpp.o" \
-"CMakeFiles/test.dir/src/main.cpp.o" \
 "CMakeFiles/test.dir/src/perft.cpp.o" \
+"CMakeFiles/test.dir/src/main.cpp.o" \
 "CMakeFiles/test.dir/src/makemove.cpp.o"
 
 # External object files for target test
@@ -165,8 +165,8 @@ test: CMakeFiles/test.dir/src/board.cpp.o
 test: CMakeFiles/test.dir/src/move.cpp.o
 test: CMakeFiles/test.dir/src/generator.cpp.o
 test: CMakeFiles/test.dir/src/global.cpp.o
-test: CMakeFiles/test.dir/src/main.cpp.o
 test: CMakeFiles/test.dir/src/perft.cpp.o
+test: CMakeFiles/test.dir/src/main.cpp.o
 test: CMakeFiles/test.dir/src/makemove.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt

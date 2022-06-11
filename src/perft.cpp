@@ -2,19 +2,14 @@
 #include "makemove.h"
 #include <perft.h>
 
-ull perft(int ply, int depth) {
+void perft(int ply, int depth, int& count, int& promotion, int& capture) {
 	// measure the perft value
 
-	// cout << ply << " " << depth << endl;
-	if (depth == 0) return 1;
+	if (depth == 0) return;
 
-	ull count = 0;
 	int temp = board.moveBufLen[ply];
 	// so that board.moveBufLen[ply] wouldn't increase
 	board.moveBufLen[ply + 1] = generateMoves(temp);
-
-	// cout << "moveBufLen[0] is equal to " << board.moveBufLen[ply] << endl;
-	// cout << "moveBufLen[1] is equal to " << board.moveBufLen[ply + 1] << endl;
 
 	for (int i = board.moveBufLen[ply]; i < board.moveBufLen[ply + 1]; i++) {
 		Move curMove = board.moveBuf[i];
@@ -22,12 +17,17 @@ ull perft(int ply, int depth) {
 		makeMove(curMove);
 
 		if (!isKingAttacked(curMove)) {
-			// curMove.display();
-			count += perft(ply + 1, depth - 1);
+			count++;
+			if (curMove.isPromotion()) promotion++;
+			if (curMove.isCapture()) capture++;
+			perft(ply + 1, depth - 1, count, promotion, capture);
 		} 
 
 		unmakeMove(curMove);
 	}
 
-	return count;
+	// if (depth == 1) {
+	// 	cout << "There are " << count << "moves!";
+	// 	cout << endl << endl;
+	// }
 }

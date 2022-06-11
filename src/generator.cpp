@@ -164,12 +164,12 @@ void generateWhitePawnMoves(int& index) {
 		while (pawnAttack) {
 			int y = highbit(pawnAttack);
 			pawnAttack ^= ((ull) 1 << (ull) y);
-			if (!isSameFile(x, y) && board.getPiece(y) == EMPTY && board.getEnPassant() == y) {
-				// ENPASSANT
+			if (!isSameFile(x, y) && board.getPiece(y) == EMPTY && board.getEnPassant() == y && y <= 47 && y >= 16) {
 				Move move;
 				move.setFrom(x);
 				move.setTo(y);
 				move.setProm(WHITE_PAWN);
+				move.setCapture(BLACK_PAWN);
 				move.setPiece(WHITE_PAWN);
 				board.moveBuf[index++] = move;
 			}
@@ -210,11 +210,12 @@ void generateBlackPawnMoves(int& index) {
 		while (pawnAttack) {
 			int y = highbit(pawnAttack);
 			pawnAttack ^= ((ull) 1 << (ull) y);
-			if (!isSameFile(x, y) && board.getPiece(y) == EMPTY && board.getEnPassant() == y) {
+			if (!isSameFile(x, y) && board.getPiece(y) == EMPTY && board.getEnPassant() == y && y >= 16 && y <= 47) {
 				Move move;
 				move.setFrom(x);
 				move.setTo(y);
 				move.setProm(BLACK_PAWN);
+				move.setCapture(WHITE_PAWN);
 				move.setPiece(BLACK_PAWN);
 				board.moveBuf[index++] = move;
 			}
@@ -550,7 +551,7 @@ bool isAttacked(ull target, bool side) {
 				if (FILE_ATTACK[to][genFileState(to)] & slidingAttackers) return true;
 			}
 
-			slidingAttackers = board.getBlackQueens() & board.getBlackBishops();
+			slidingAttackers = board.getBlackQueens() | board.getBlackBishops();
 			if (slidingAttackers) {
 				if (DIAG_A1H8_ATTACK[to][genDiagA1H8State(to)] & slidingAttackers) return true;
 				if (DIAG_A8H1_ATTACK[to][genDiagA8H1State(to)] & slidingAttackers) return true;
@@ -573,7 +574,7 @@ bool isAttacked(ull target, bool side) {
 				if (FILE_ATTACK[to][genFileState(to)] & slidingAttackers) return true;
 			}
 
-			slidingAttackers = board.getWhiteQueens() & board.getWhiteBishops();
+			slidingAttackers = board.getWhiteQueens() | board.getWhiteBishops();
 			if (slidingAttackers) {
 				if (DIAG_A1H8_ATTACK[to][genDiagA1H8State(to)] & slidingAttackers) return true;
 				if (DIAG_A8H1_ATTACK[to][genDiagA8H1State(to)] & slidingAttackers) return true;
