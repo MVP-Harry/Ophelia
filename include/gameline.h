@@ -10,6 +10,13 @@ public:
 	bool castleBlack; // black's castle status
 	int epSquare;
 	int fiftyMove;
+
+	GameLine() {
+		castleBlack = 3;
+		castleWhite = 3;
+		epSquare = 0;
+		fiftyMove = 0;
+	}
 };
 
 #endif

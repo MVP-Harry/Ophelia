@@ -1,3 +1,4 @@
+#include "globaldef.h"
 #include <global.h>
 #include <fstream>
 #include <iostream>
@@ -163,7 +164,8 @@ void generateWhitePawnMoves(int& index) {
 		while (pawnAttack) {
 			int y = highbit(pawnAttack);
 			pawnAttack ^= ((ull) 1 << (ull) y);
-			if (!isSameFile(x, y) && board.getPiece(y) == EMPTY && y == board.getEnPassant() == y) {
+			if (!isSameFile(x, y) && board.getPiece(y) == EMPTY && board.getEnPassant() == y) {
+				// ENPASSANT
 				Move move;
 				move.setFrom(x);
 				move.setTo(y);
@@ -208,7 +210,7 @@ void generateBlackPawnMoves(int& index) {
 		while (pawnAttack) {
 			int y = highbit(pawnAttack);
 			pawnAttack ^= ((ull) 1 << (ull) y);
-			if (!isSameFile(x, y) && board.getPiece(y) == EMPTY && y == board.getEnPassant() == y) {
+			if (!isSameFile(x, y) && board.getPiece(y) == EMPTY && board.getEnPassant() == y) {
 				Move move;
 				move.setFrom(x);
 				move.setTo(y);
@@ -439,21 +441,47 @@ void generateBlackQueenMoves(int& index) {
 // }
 
 void generateAllWhiteMoves(int& index) {
+	// DONE: fix isAttacked, currently it isn't working
+	// int start = index;
 	generateWhiteBishopMoves(index);
+	// cout << "#of Bishop Moves: " << index - start << endl;
+	// start = index;
 	generateWhiteKingMoves(index);
+	// cout << "#of King Moves: " << index - start << endl;
+	// start = index;
 	generateWhitePawnMoves(index);
+	// cout << "#of Pawn Moves: " << index - start << endl;
+	// start = index;
 	generateWhiteKnightMoves(index);
+	// cout << "#of Knight Moves: " << index - start << endl;
+	// start = index;
 	generateWhiteQueenMoves(index);
+	// cout << "#of Queen Moves: " << index - start << endl;
+	// start = index;
 	generateWhiteRookMoves(index);
+	// cout << "#of Rook Moves: " << index - start << endl;
+	// start = index;
 }
 
 void generateAllBlackMoves(int& index) {
+	// int start = index;
 	generateBlackBishopMoves(index);
+	// cout << "#of Bishop Moves: " << index - start << endl;
+	// start = index;
 	generateBlackKingMoves(index);
+	// cout << "#of King Moves: " << index - start << endl;
+	// start = index;
 	generateBlackKnightMoves(index);
+	// cout << "#of Knight Moves: " << index - start << endl;
+	// start = index;
 	generateBlackRookMoves(index);
+	// cout << "#of Rook Moves: " << index - start << endl;
+	// start = index;
 	generateBlackQueenMoves(index);
+	// cout << "#of Queen Moves: " << index - start << endl;
+	// start = index;
 	generateBlackPawnMoves(index);
+	// cout << "#of Pawn Moves: " << index - start << endl;
 }
 
 int generateMoves(int& index) {
@@ -484,7 +512,8 @@ bool isKingAttacked(Move curMove) {
 				target |= ((ull) 1 << (ull) C1);
 			}
 		} else {
-			target |= ((ull) 1 << (ull) board.getWhiteKing());
+			// cout << board.getWhiteKing() << endl;
+			target |= board.getWhiteKing();
 		}
 	} else {
 		if (curMove.isCastle()) {
@@ -498,7 +527,7 @@ bool isKingAttacked(Move curMove) {
 				target |= ((ull) 1 << (ull) C8);
 			}
 		} else {
-			target |= ((ull) 1 << (ull) board.getBlackKing());
+			target |= board.getBlackKing();
 		}
 	}
 	return isAttacked(target, side);

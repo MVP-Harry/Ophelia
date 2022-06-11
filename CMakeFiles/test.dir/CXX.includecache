@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/harry/CS/Ophelia/src/makemove.cpp
-makemove.h
-/home/harry/CS/Ophelia/src/makemove.h
-board.h
--
-global.h
--
-
 /home/harry/CS/Ophelia/src/perft.cpp
 generator.h
 /home/harry/CS/Ophelia/src/generator.h

@@ -5,7 +5,7 @@ void Board::helpInit() {
 	//this is a comment
 	for (int i = 0; i <= 7; i++) {
 		for (int j = 0; j <= 7; j++) {
-			int id = (7 - i) * 8 + j;
+			int id = i * 8 + j;
 			ull val = ((ull) 1 << (ull) id);
 			switch (square[8 * i + j]) {
 				case WHITE_KING:
@@ -47,6 +47,9 @@ void Board::helpInit() {
 			}
 		}
 	}
+	endofGame = 0;
+	endofSearch = 0;
+	for (int i = 0; i < MAX_PLY; i++) moveBufLen[i] = 0;
 }
 
 Board::Board() {
@@ -89,10 +92,10 @@ Board::Board(std::string fen, std::string fencolor, std::string fencastling, std
 	// Init square and use helpInit to init bitset
 	for (int i = 0; i < 64; i++) square[i] = 0;
 	int len = fen.length();
-	int row = 0, col = 0;
+	int row = 7, col = 0;
 	for (int i = 0; i < len; i++) {
 		if (fen[i] == '/') {
-			row++, col = 0;
+			row--, col = 0;
 		} else if (isdigit(fen[i])) {
 			int num = fen[i] - '0';
 			col += num;
@@ -166,7 +169,7 @@ Board::Board(std::string fen, std::string fencolor, std::string fencastling, std
 
 void Board::display() {
 	if (viewRotated) {
-		for (int i = 7; i >= 0; i--) {
+		for (int i = 0; i <= 7; i++) {
 			for (int j = 0; j <= 7; j++) {
 				std::cout << PIECENAMES[square[8 * i + j]];
 			}
@@ -174,7 +177,7 @@ void Board::display() {
 		}
 		return;
 	}
-	for (int i = 0; i <= 7; i++) {
+	for (int i = 7; i >= 0; i--) {
 		for (int j = 0; j <= 7; j++) {
 			std::cout << PIECENAMES[square[8 * i + j]];
 		}

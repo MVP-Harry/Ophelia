@@ -133,8 +133,13 @@ void makeMove(Move& move) {
 			board.square[to]          = WHITE_PAWN;
 			board.epSquare            = 0;
 			board.fiftyMove           = 0;
-			if (RANKS[from] == 2)
-				if (RANKS[to] == 4) board.epSquare = from + 8;
+			if (RANKS[from] == 2) {
+				if (RANKS[to] == 4) { 
+					board.epSquare = from + 8;
+					// cout << board.epSquare << endl;
+					// cout << "HELLO" << endl;
+				}
+			}
 			if (capture)
 			{
 				if (move.isEnpassant())
