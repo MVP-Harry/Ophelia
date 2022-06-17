@@ -16,6 +16,11 @@
 },
 {
   "directory": "/home/harry/CS/Ophelia",
+  "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/perft.cpp.o -c /home/harry/CS/Ophelia/src/perft.cpp",
+  "file": "/home/harry/CS/Ophelia/src/perft.cpp"
+},
+{
+  "directory": "/home/harry/CS/Ophelia",
   "command": "/usr/bin/c++   -I/home/harry/CS/Ophelia/include    -std=gnu++2a -o CMakeFiles/test.dir/src/global.cpp.o -c /home/harry/CS/Ophelia/src/global.cpp",
   "file": "/home/harry/CS/Ophelia/src/global.cpp"
 },

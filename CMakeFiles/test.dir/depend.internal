@@ -47,3 +47,13 @@ CMakeFiles/test.dir/src/move.cpp.o
  include/global.h
  include/globaldef.h
  include/move.h
+CMakeFiles/test.dir/src/perft.cpp.o
+ /home/harry/CS/Ophelia/src/perft.cpp
+ include/board.h
+ include/gameline.h
+ include/generator.h
+ include/global.h
+ include/globaldef.h
+ include/makemove.h
+ include/move.h
+ include/perft.h

@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/harry/CS/Ophelia/src/main.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/main.cpp.o"
   "/home/harry/CS/Ophelia/src/makemove.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/makemove.cpp.o"
   "/home/harry/CS/Ophelia/src/move.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/move.cpp.o"
+  "/home/harry/CS/Ophelia/src/perft.cpp" "/home/harry/CS/Ophelia/CMakeFiles/test.dir/src/perft.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

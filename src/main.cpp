@@ -31,9 +31,12 @@ int main() {
 	// board.display();
 	// cout << isKingAttacked(move) << endl;
 	// cout << "#of captures: " << capture << endl;
-	int count = 0, promotion = 0, capture = 0;
-	perft(0, 4, count, promotion, capture);
-	// perft(0, 4, count, promotion, capture);
-	// cout << "#of nodes: " << count << endl;
+	int count = 0, promotion = 0, capture = 0, enPassant = 0;
+	
+	perft(0, 2, count, capture, enPassant, promotion);
+	cout << "#of nodes: " << count << endl;
+	cout << "#of captures: " << capture << endl;
+	cout << "#of Holy Hells: " << enPassant << endl;
+	cout << "#of promotions: " << promotion << endl;
 	return 0;
 }

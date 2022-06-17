@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/test.dir/src/board.cpp.o CMakeFiles/test.dir/src/move.cpp.o CMakeFiles/test.dir/src/generator.cpp.o CMakeFiles/test.dir/src/global.cpp.o CMakeFiles/test.dir/src/main.cpp.o CMakeFiles/test.dir/src/makemove.cpp.o  -o test 
+/usr/bin/c++     CMakeFiles/test.dir/src/board.cpp.o CMakeFiles/test.dir/src/move.cpp.o CMakeFiles/test.dir/src/generator.cpp.o CMakeFiles/test.dir/src/perft.cpp.o CMakeFiles/test.dir/src/global.cpp.o CMakeFiles/test.dir/src/main.cpp.o CMakeFiles/test.dir/src/makemove.cpp.o  -o test 

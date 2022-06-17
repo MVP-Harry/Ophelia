@@ -1,4 +1,4 @@
 #include <global.h>
 #include <makemove.h>
 
-ull perft(int ply, int depth);
+void perft(int ply, int depth, int& count, int& capture, int& enPassant, int& promotion);
