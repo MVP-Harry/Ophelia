@@ -75,28 +75,28 @@ bool Move::isCapture() {
 } 
  
 bool Move::isKingcaptured() {
-   	// bits 17 to 19 must be 010
-    return ((move >> 17) & 7) == 2;
+   	// bits 16 to 18 must be 010
+    return ((move >> 16) & 7) == 2;
 } 
  
 bool Move::isRookmove() {
    	// bits 13 to 15 must be 110
-    return ((move >> 13) & 7) == 6;
+    return ((move >> 12) & 7) == 6;
 } 
  
 bool Move::isRookcaptured() {
 	// bits 17 to 19 must be 110
-    return ((move >> 17) & 7) == 6;
+    return ((move >> 16) & 7) == 6;
 } 
  
 bool Move::isKingmove() {
-    // bits 13 to 15 must be 010
-    return ((move >> 13) & 7) == 2;
+    // bits 12 to 14 must be 010
+    return ((move >> 12) & 7) == 2;
 } 
  
 bool Move::isPawnmove() {
     // bits 13 to 15 must be 001
-    return ((move >> 13) & 7) == 1;
+    return ((move >> 12) & 7) == 1;
 } 
  
 bool Move::isPawnDoublemove() {

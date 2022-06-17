@@ -20,6 +20,10 @@ ull FILE_ATTACK[64][64];
 ull DIAG_A1H8_ATTACK[64][64];
 ull DIAG_A8H1_ATTACK[64][64];
 ull BITSET[64];
+int ICAPT = 0;
+int IEP = 0;
+int IPROM = 0;
+int ICASTLE = 0;
 Board board;
 
 std::pair<int, int> intToPair(int num) {
