@@ -6,22 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/home/harry/CS/Ophelia/src/main.cpp
-globaldef.h
-/home/harry/CS/Ophelia/src/globaldef.h
-fstream
--
-global.h
--
-move.h
--
-board.h
--
+/home/harry/CS/Ophelia/src/perft.cpp
+generator.h
+/home/harry/CS/Ophelia/src/generator.h
 iostream
 -
-generator.h
--
 perft.h
+-
+makemove.h
 -
 
 include/board.h

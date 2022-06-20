@@ -14,7 +14,16 @@ int main() {
 	init();
 	board = Board(fen, fencolor, fencastling, fenenpessant, fenhalfmoveclock, fenfullmove);
 
-	int count = perft(0, 4);
+	Move move;
+	move.setFrom(E2);
+	move.setTo(C4);
+	move.setPiece(WHITE_BISHOP);
+	// move.setCapture(BLACK_BISHOP);
+	// makeMove(move);
+
+	board.display();
+
+	int count = perft(0, 2);
 
 	cout << "#of nodes: " << count << endl;
 	cout << "#of captures: " << ICAPT << endl;

@@ -575,6 +575,8 @@ bool isAttacked(ull target, bool side) {
 			}
 
 			slidingAttackers = board.getWhiteQueens() | board.getWhiteBishops();
+			// if (to == C8)
+			// 	bitdisplay(slidingAttackers);
 			if (slidingAttackers) {
 				if (DIAG_A1H8_ATTACK[to][genDiagA1H8State(to)] & slidingAttackers) return true;
 				if (DIAG_A8H1_ATTACK[to][genDiagA8H1State(to)] & slidingAttackers) return true;
