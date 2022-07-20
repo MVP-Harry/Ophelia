@@ -3,7 +3,6 @@
 #include <global.h>
 
 // TODO: implement makes and unmakes move
-//
 
 void makeCapture(int capture, int to) {
 	if (capture <= 8) board.whitePieces ^= BITSET[to];
